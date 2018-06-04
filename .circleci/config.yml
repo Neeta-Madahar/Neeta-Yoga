@@ -1,7 +1,16 @@
+vm_settings: &vm_settings
+  docker:
+    - image: circleci/node:6.12.3-browsers
+
 version: 2
 jobs:
   build:
+    <<: *vm_settings
+    working_directory: ~/app
     steps:
+      - attach_workspace:
+          at: '~/app'
+
       - checkout
 
       - restore_cache:
@@ -22,8 +31,11 @@ jobs:
       - run: echo 'aws sync goes here'
 
   test:
+    <<: *vm_settings
+    working_directory: ~/app
     steps:
       - checkout
+
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
@@ -39,9 +51,16 @@ jobs:
 
       - run: yarn run lint
 
+      - persist_to_workspace:
+          root: ~/app
+          paths:
+            - node_modules
+
 workflows:
   version: 2
   build_and_test:
     jobs:
       - build
+        requires:
+          - test
       - test
