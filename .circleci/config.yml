@@ -1,4 +1,5 @@
 vm_settings: &vm_settings
+  working_directory: ~/app
   docker:
     - image: circleci/node:latest
 
@@ -6,10 +7,9 @@ version: 2
 jobs:
   build:
     <<: *vm_settings
-    working_directory: ~/app
     steps:
       - attach_workspace:
-          at: '~/app'
+          at: ~/app/node_modules
 
       - checkout
 
@@ -32,7 +32,6 @@ jobs:
 
   test:
     <<: *vm_settings
-    working_directory: ~/app
     steps:
       - checkout
 
@@ -52,9 +51,9 @@ jobs:
       - run: yarn run lint
 
       - persist_to_workspace:
-          root: ~/app
+          root: node_modules
           paths:
-            - node_modules
+            - .
 
 workflows:
   version: 2
