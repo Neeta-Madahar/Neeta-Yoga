@@ -1,6 +1,6 @@
 vm_settings: &vm_settings
   docker:
-    - image: circleci/node:6.12.3-browsers
+    - image: circleci/node:latest
 
 version: 2
 jobs:
