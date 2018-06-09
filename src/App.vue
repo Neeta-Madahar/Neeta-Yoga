@@ -1,28 +1,44 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  import Prismic from 'prismic-javascript';
 
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
+  export default {
+    name: 'app',
+    components: {
+      ComponentRenderer
+    },
+    data () {
+      return {
+        data: null
+      }
+    },
+    methods: {
+      getContent () {
+        if(process.env.NODE_ENV === 'development') {
+          this.data = ['hello'];
+        } else {
+          const API_ENDPOINT = 'https://gweit.prismic.io/api/v2';
+          Prismic.getApi(API_ENDPOINT)
+            .then(api => api.query(''))
+            .then((response) => {
+//              console.log('Documents: ', response.results);
+              this.data = response.results;
+//              console.log(response.results)
+            })
+        }
+      }
+    },
+    beforeMount () {
+      this.getContent()
+    }
   }
-}
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
