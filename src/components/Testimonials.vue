@@ -1,22 +1,22 @@
 <template>
-  <div class="testimonials">
-    <div class="row">
-      <h2>{{ title }}</h2>
+  <div id="testimonials">
+    <h2>{{ title }}</h2>
 
-      <img v-bind="imageAttributes">
+    <floral-image v-bind:image="image" />
 
-      <div class="slider">
-        <div v-for="(testimonial, index) in testimonials" v-bind:key="`testimonial-${index}`">
-          {{ testimonial.text }}
+    <div class="slider">
+      <div v-for="(testimonial, index) in testimonials" v-bind:key="`testimonial-${index}`">
+        {{ testimonial.text }}
 
-          {{ testimonial.name }}
-        </div>
+        {{ testimonial.name }}
       </div>
     </div>
   </div>
 </template>
 
 <script>
+  import FloralImage from './FloralImage.vue';
+
   export default {
     name: 'testimonials',
     props: {
@@ -24,14 +24,9 @@
       image: Object,
       testimonials: Array,
     },
-    computed: {
-      imageAttributes: function() {
-        return {
-          src: this.image.url,
-          alt: this.image.alt
-        }
-      }
-    },
+    components: {
+      FloralImage
+    }
   }
 </script>
 

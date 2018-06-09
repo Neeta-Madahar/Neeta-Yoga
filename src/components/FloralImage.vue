@@ -1,5 +1,7 @@
 <template>
-  <img src="http://via.placeholder.com/400x400" alt="">
+  <div class="floral-image">
+    <img v-bind="imageAttributes">
+  </div>
 </template>
 
 <script>
@@ -9,6 +11,17 @@
     name: 'floral-image',
     component: {
       FloralImage
+    },
+    props: {
+      image: Object,
+    },
+    computed: {
+      imageAttributes: function() {
+        return {
+          src: this.image.url,
+          alt: this.image.alt
+        }
+      }
     }
   }
 </script>

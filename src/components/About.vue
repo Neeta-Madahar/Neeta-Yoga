@@ -1,8 +1,8 @@
 <template>
-  <div class="about">
+  <div id="about">
     <div class="row">
       <div class="col-md">
-        <img v-bind="imageAttributes">
+        <floral-image v-bind:image="image" />
       </div>
       <div class="col-md">
         <h2>{{ title }}</h2>
@@ -14,6 +14,8 @@
 </template>
 
 <script>
+  import FloralImage from './FloralImage.vue';
+
   export default {
     name: 'about',
     props: {
@@ -21,13 +23,8 @@
       text: String,
       image: Object,
     },
-    computed: {
-      imageAttributes: function() {
-        return {
-          src:this.image.url,
-          alt:this.image.alt
-        }
-      }
+    components: {
+      FloralImage
     }
   }
 </script>
