@@ -1,0 +1,7 @@
+.component {
+  text-align: right;
+
+  &:nth-child(odd) {
+    text-align: left;
+  }
+}
