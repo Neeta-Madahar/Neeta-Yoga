@@ -23,6 +23,10 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
+      - run:
+          name: Rebuild Node-sass
+          command: npm rebuild node-sass
+
       - run: yarn run build
 
       - run: echo 'aws sync goes here'
