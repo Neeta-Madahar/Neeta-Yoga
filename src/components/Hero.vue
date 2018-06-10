@@ -80,7 +80,7 @@ nav {
 
 .paisley {
   position: absolute;
-  top: 27%;
+  top: 32%;
   right: 49%;
 }
 
@@ -96,7 +96,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 70vh;
+  height: 80vh;
 }
 
 
