@@ -9,9 +9,13 @@
         <li><a href="#">Contact </a></li>
       </ul>
     </nav>
-    <h1>Yoga & <br>Meditation Teacher</h1>
-    <div class="logo">
+
+    <div class="container">
+      <h1 class="caption">Yoga & <br>Meditation <br>Teacher</h1>
+      <img class="paisley" src="../assets/images/paisley.svg">
+      <img class="logo " src="../assets/images/logo-neeta.svg">
     </div>
+
   </div>
 
 </template>
@@ -23,7 +27,7 @@
 @import '../assets/sass/_variables.scss';
 
 .hero {
-  height: 653px;
+  height: 100vh;
   background: linear-gradient(0deg, $color-orange, $color-pink);
   background-size: 400% 400%;
 
@@ -53,6 +57,7 @@ a {
   text-decoration: none;
   font-family: $font-rubik;
   font-size: 24px;
+  margin-top: 50px;
 }
 
 li {
@@ -66,5 +71,33 @@ nav {
   text-align: center;
   padding: 10px;
 }
+
+.logo {
+  height: 240px;
+  order: 1;
+  margin-right: 30px;
+}
+
+.paisley {
+  position: absolute;
+  top: 32%;
+  right: 49%;
+}
+
+.caption {
+  order: 2;
+  text-align: center;
+  color: $color-white;
+  font-family: $font-rubik;
+  font-weight: normal;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
 
 </style>
