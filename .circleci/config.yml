@@ -9,7 +9,7 @@ jobs:
     <<: *vm_settings
     steps:
       - attach_workspace:
-          at: ~/app/dist/
+          at: .
 
       - run: sudo apt-get -y -qq install awscli
 
