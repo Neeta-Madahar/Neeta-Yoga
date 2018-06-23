@@ -6,7 +6,9 @@ vm_settings: &vm_settings
 version: 2
 jobs:
   deploy:
-    <<: *vm_settings
+    working_directory: ~/app
+    docker:
+      - image: circleci/ruby:2.4.1
     steps:
       - attach_workspace:
           at: ~/app/dist
