@@ -15,7 +15,7 @@ jobs:
 
       - run:
           name: AWS Sync
-          command: aws s3 sync ~/app/dist s3://web.neetamadahar.com --delete
+          command: aws s3 sync ~/app/dist/ s3://web.neetamadahar.com --acl public-read --exact-timestamps --delete || return 1;
 
   build:
     <<: *vm_settings
@@ -80,3 +80,5 @@ workflows:
           filters:
             tags:
               only: /^[\d.]*/
+            branches:
+              ignore: /.*/
