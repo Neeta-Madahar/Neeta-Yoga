@@ -6,12 +6,12 @@ vm_settings: &vm_settings
 version: 2
 jobs:
   deploy:
-    working_directory: ~/app
-    docker:
-      - image: circleci/python:2.7
+    <<: *vm_settings
     steps:
       - attach_workspace:
           at: ~/app/dist
+
+      - run: sudo apt-get -y -qq install awscli
 
       - run:
           name: AWS Sync
