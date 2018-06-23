@@ -11,7 +11,9 @@ jobs:
       - attach_workspace:
           at: ~/app/dist
 
-      - run: echo 'aws sync goes here'
+      - run:
+          name: AWS Sync
+          command: aws s3 sync ~/app/dist s3://web.neetamadahar.com --delete
 
   build:
     <<: *vm_settings
