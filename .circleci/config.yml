@@ -15,7 +15,7 @@ jobs:
 
       - run:
           name: AWS Sync
-          command: aws s3 sync ./dist/ s3://web.neetamadahar.com/ --acl public-read --exact-timestamps --delete || echo "sync failed."
+          command: aws s3 sync . s3://web.neetamadahar.com --acl public-read --exact-timestamps --delete || return 1
 
   build:
     <<: *vm_settings
