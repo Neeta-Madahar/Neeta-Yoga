@@ -10,7 +10,7 @@ module.exports = {
   chainWebpack: webpackConfig => {
     if (process.env.NODE_ENV === 'production') {
       const inlineLimit = 10000;
-      const assetsPath = '/';
+      const assetsPath = '';
 
       webpackConfig
         .output
