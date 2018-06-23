@@ -13,8 +13,6 @@ jobs:
 
       - run: sudo apt-get -y -qq install awscli
 
-      - run: aws s3api get-bucket-location --bucket arn:aws:s3:::web.neetamadahar.com
-
       - run:
           name: AWS Sync
           command: aws --region us-east-2 s3 sync ./build s3://web.neetamadahar.com/ --acl public-read --exact-timestamps --delete --region= || return 1
