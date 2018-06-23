@@ -8,7 +8,7 @@ jobs:
   deploy:
     working_directory: ~/app
     docker:
-      - image: circleci/ruby:2.4.1
+      - image: circleci/python:2.7
     steps:
       - attach_workspace:
           at: ~/app/dist
