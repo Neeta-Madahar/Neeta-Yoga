@@ -7,7 +7,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
  */
 
 module.exports = {
-  compiler: true,
   chainWebpack: webpackConfig => {
     if (process.env.NODE_ENV === 'production') {
       const inlineLimit = 10000;
