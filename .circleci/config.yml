@@ -74,6 +74,8 @@ workflows:
       - build:
           requires:
             - test
+          branches:
+            ignore: /.*/
       - deploy:
           requires:
             - build
