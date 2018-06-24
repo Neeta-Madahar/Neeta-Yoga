@@ -3,7 +3,7 @@
     <Hero />
 
     <div v-for="component in this.data" v-bind:key="component.slice_type">
-      <about v-once v-if="component.slice_type === 'about'" v-bind:title="component.data.title" v-bind:text="component.data.text" v-bind:image="component.data.image" />
+      <about v-once v-if="component.slice_type === 'about_section'" v-bind:title="component.data.title" v-bind:text="component.data.text" v-bind:image="component.data.image" />
       <yoga v-once v-if="component.slice_type === 'yoga'" v-bind:privateText="component.data.privateText" v-bind:lessons="component.data.lessons" />
       <testimonials v-once v-if="component.slice_type === 'testimonials'" v-bind:title="component.data.title" v-bind:image="component.data.image" v-bind:testimonials="component.data.testimonials" />
       <meditation v-once v-if="component.slice_type === 'meditation'" v-bind:title="component.data.title" v-bind:text="component.data.text" v-bind:image="component.data.image" v-bind:quote="component.data.quote" v-bind:quoteBy="component.data.quoteBy" />
@@ -19,6 +19,7 @@
 
 <script>
   import Prismic from 'prismic-javascript';
+  import { formatData } from './utils/cmsHelpers';
   import Hero from './components/Hero.vue';
   import About from './components/About.vue';
   import Yoga from './components/Yoga.vue';
@@ -54,7 +55,7 @@
         if(process.env.NODE_ENV === 'development') {
           this.data = [
             {
-              slice_type: 'about',
+              slice_type: 'about_section',
               data: {
                 title: 'About',
                 text: '<p>hello</p>',
@@ -196,12 +197,10 @@
             }
           ];
         } else {
-          const API_ENDPOINT = 'https://gweit.prismic.io/api/v2';
-          Prismic.getApi(API_ENDPOINT)
-            .then(api => api.query(''))
-            .then((response) => {
-              this.data = response.results;
-            });
+          const API_ENDPOINT = 'https://art-and-yoga.cdn.prismic.io/api/v2';
+          Prismic.api(API_ENDPOINT)
+            .then(api => api.getByUID('yoga', 'yoga'))
+            .then(response => this.data = formatData(response.data.body));
         }
       }
     },

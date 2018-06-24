@@ -19,7 +19,7 @@
       imageAttributes: function() {
         return {
           src: this.image.url,
-          alt: this.image.alt
+          alt: this.image.alt || ''
         }
       }
     }
