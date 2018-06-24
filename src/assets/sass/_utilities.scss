@@ -1,0 +1,18 @@
+.mobile-only {
+  @include sm {
+    display:  none;
+  }
+}
+
+.float {
+  &-right {
+    float: right;
+  }
+  &-left {
+    float: left;
+  }
+}
+
+.clear-fix {
+  clear: both;
+}

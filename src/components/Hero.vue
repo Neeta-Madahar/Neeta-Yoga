@@ -1,19 +1,24 @@
 <template>
-  <div class="hero">
+  <div class="hero column center-xs">
     <nav>
-      <ul>
+      <ul class="clear-fix">
+        <li class="float-right menu">
+          <button>
+            <i class="icon-burger2" id="burger-icon" />
+            <i class="icon-close2" />
+          </button>
+        </li>
         <li><a href="#">About </a></li>
         <li><a href="#">Yoga Classes </a></li>
         <li><a href="#">Meditation </a></li>
-        <li><a href="#">Explore </a></li>
+        <li><a href="#">Explore </a><i class="icon-chevron" /></li>
         <li><a href="#">Contact </a></li>
       </ul>
     </nav>
 
     <div class="container">
-      <h1 class="caption">Yoga & <br>Meditation <br>Teacher</h1>
-      <img class="paisley" src="../assets/images/paisley.svg">
-      <img class="logo " src="../assets/images/logo-neeta.svg">
+      <h1><img class="logo " src="../assets/images/logo-neeta.svg" alt="neeta madahar"></h1>
+      <span class="caption">Yoga & <br>Meditation <br>Teacher</span>
     </div>
 
   </div>
@@ -24,9 +29,13 @@
 
 </script>
 <style lang="scss" scoped>
-@import '../assets/sass/_variables.scss';
+@import '../assets/sass/_mixins.scss';
+@import '../assets/sass/_utilities.scss';
+
 
 .hero {
+  flex-direction: column;
+  display: flex;
   height: 100vh;
   background: linear-gradient(0deg, $color-orange, $color-pink);
   background-size: 400% 400%;
@@ -52,51 +61,98 @@
   }
 }
 
+i {
+  color: white;
+}
+
+h1 {
+  @include sm {
+    margin-bottom: 0;
+  }
+}
+
 a {
   color: $color-white;
   text-decoration: none;
   font-family: $font-rubik;
-  font-size: 24px;
+  font-size: 20px;
   margin-top: 50px;
 }
 
 li {
   list-style-type: none;
-  display: inline;
   padding: 0 20px;
+  display: none;
+  @include sm {
+    display: inline;
+  }
 
+}
+
+br {
+    display: none;
+    @include sm {
+      display: block;
+    }
 }
 
 nav {
   text-align: center;
   padding: 10px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.menu {
+  display: block;
+  @include sm {
+    display: none;
+  }
 }
 
 .logo {
-  height: 240px;
-  order: 1;
-  margin-right: 30px;
+  margin: 0 auto;
+  height: 140px;
+  @include sm {
+    height: 240px;
+    margin-right: 30px;
+  }
 }
 
-.paisley {
-  position: absolute;
-  top: 32%;
-  right: 49%;
-}
 
 .caption {
-  order: 2;
-  text-align: center;
+  text-align: left;
+  display: inline-block;
+  margin: 0 auto;
+  max-width: 280px;
+  padding-top: 30px;
   color: $color-white;
   font-family: $font-rubik;
   font-weight: normal;
+  font-size: $font-size-heading3;
+
+  @include sm {
+    text-align: center;
+    font-size: $font-size-heading2;
+    max-width: 100%;
+  }
+
+  @media screen and (min-width: 1024px) {
+    align-self: flex-end;
+  }
 }
 
 .container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 80vh;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 10px;
+
+  @media screen and (min-width: 1024px) {
+    flex-direction: row;
+    display: flex;
+  }
 }
 
 

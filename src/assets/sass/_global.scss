@@ -1,3 +1,26 @@
 body {
   font-family: $font-raleway;
 }
+
+
+* {
+  box-sizing: border-box;
+}
+
+.font {
+  &--h1 {
+    font-size: $font-size-heading1;
+  }
+  &--h2 {
+    font-size: $font-size-heading2;
+  }
+  &--h3 {
+    font-size: $font-size-heading3;
+  }
+  &--body {
+    font-size: $font-size-body;
+  }
+  &--mobile {
+    font-size: $font-size-body-mobile;
+  }
+}
