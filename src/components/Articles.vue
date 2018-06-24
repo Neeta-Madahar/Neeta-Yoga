@@ -2,9 +2,9 @@
   <div id="articles">
     <h2>{{title}}</h2>
 
-    <div v-for="(link, index) in this.links" v-bind:key="`article-${index}`">
+    <div v-for="(link, index) in this.links" v-bind:key="`article-${index}`" class="item">
       <a v-bind:href="link.url" target="_blank">{{link.title}}</a>
-      {{link.description}}
+      <div>{{link.description}}</div>
     </div>
   </div>
 </template>
@@ -29,5 +29,13 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "../assets/sass/variables";
 
+  .item {
+    margin: 20px 0;
+  }
+
+  a {
+    font-family: $font-rubik;
+  }
 </style>

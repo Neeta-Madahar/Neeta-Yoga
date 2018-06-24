@@ -1,7 +1,113 @@
+$section-even-color: $color-orange;
+$section-odd-color: $color-pink;
+
 .component {
   text-align: right;
+  margin-bottom: 50px;
+
+  &-background-image {
+    padding: 40px 0;
+  }
+
+  .row {
+    flex-direction: row-reverse;
+  }
+
+  a {
+    color: $section-even-color;
+
+    @include hover-focus {
+      text-decoration: underline;
+    }
+  }
+
+  h3 {
+    color: $section-even-color;
+    font-size: 23px;
+  }
+
+  h2 {
+    border-bottom-color: $section-even-color;
+    margin-left: auto;
+  }
+
+  footer {
+    color: $section-even-color;
+    font-family: $font-rubik-bold;
+  }
+
+  #meditation q {
+    color: $section-even-color;
+  }
+
+  button {
+    border-color: $section-even-color;
+
+    @include hover-focus {
+      background-color: $section-even-color;
+    }
+  }
+
+  #resource,
+  #videos,
+  #events {
+    .item {
+      justify-content: flex-end;
+    }
+  }
+
 
   &:nth-child(odd) {
     text-align: left;
+
+    .row {
+      flex-direction: row;
+    }
+
+    a {
+      color: $section-odd-color;
+    }
+
+    h3 {
+      color: $section-odd-color;
+    }
+
+    h2 {
+      border-bottom-color: $section-odd-color;
+      margin-left: 0;
+    }
+
+    footer {
+      color: $section-odd-color;
+    }
+
+    #meditation q {
+      color: $section-odd-color;
+    }
+
+    button {
+      border-color: $section-odd-color;
+
+      @include hover-focus {
+        background-color: $section-odd-color;
+      }
+    }
+
+    #resource,
+    #videos,
+    #events{
+      .item {
+        justify-content: flex-start;
+      }
+
+      .image,
+      .video {
+        order: 1;
+      }
+
+      .text {
+        order: 2;
+      }
+    }
   }
 }

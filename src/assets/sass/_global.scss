@@ -1,10 +1,76 @@
 body {
   font-family: $font-raleway;
+  color: $color-grey;
+  font-size: 20px;
 }
-
 
 * {
   box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: $font-rubik-bold;
+}
+
+h2 {
+  border-bottom: 4px solid;
+  font-size: 32px;
+  padding-bottom: 10px;
+  width: 350px;
+  margin-bottom: 5px;
+}
+
+a {
+  text-decoration: none;
+}
+
+q {
+  font-style: italic;
+}
+
+[role="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button {
+  background: none;
+  border: 0;
+  color: inherit;
+  /* cursor: default; */
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  -webkit-appearance: button; /* for input */
+  -webkit-user-select: none; /* for button */
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+input::-moz-focus-inner,
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+[role="button"] {
+  color: inherit;
+  cursor: default;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  white-space: pre;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .font {

@@ -4,17 +4,22 @@
 
     <floral-image v-bind:image="image" />
 
-    <div class="slider">
-      <div v-for="(testimonial, index) in testimonials" v-bind:key="`testimonial-${index}`">
-        {{ testimonial.text }}
+    <carousel :autoplay="true" :navigationEnabled="true" :perPageCustom="[[320, 1]]">
+      <slide v-for="(testimonial, index) in testimonials" v-bind:key="`testimonial-${index}`">
+        <blockquote>
+          <q>{{ testimonial.text }}</q>
 
-        {{ testimonial.name }}
-      </div>
-    </div>
+          <footer>
+            {{ testimonial.name }}
+          </footer>
+        </blockquote>
+      </slide>
+    </carousel>
   </div>
 </template>
 
 <script>
+  import { Carousel, Slide } from 'vue-carousel';
   import FloralImage from './FloralImage.vue';
 
   export default {
@@ -25,11 +30,20 @@
       testimonials: Array,
     },
     components: {
-      FloralImage
+      FloralImage,
+      Carousel,
+      Slide
     }
   }
 </script>
 
 <style lang="scss" scoped>
+  @import "../assets/sass/variables";
+
+  .VueCarousel {
+    margin-left: auto;
+    margin-right: 40px;
+    width: 700px;
+  }
 
 </style>

@@ -10,7 +10,7 @@
         <img v-bind="imageAttributes" />
 
         <blockquote>
-          {{quote}}
+          <q>{{quote}}</q>
           <footer>
             {{quoteBy}}
           </footer>
@@ -42,5 +42,20 @@
 </script>
 
 <style lang="scss" scoped>
+  @import '../assets/sass/_variables';
 
+  a {
+    color: $color-grey !important;
+    text-decoration: underline;
+    font-weight: 700;
+  }
+
+  blockquote {
+    font-size: 16px;
+  }
+
+  footer {
+    color: $color-grey !important;
+    font-family: $font-raleway !important;
+  }
 </style>

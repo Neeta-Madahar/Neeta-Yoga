@@ -2,18 +2,20 @@
   <div id='app'>
     <Hero />
 
-    <div v-for="component in this.data" v-bind:key="component.slice_type">
+    <div v-for="component in this.data" v-bind:key="component.slice_type" v-bind:class="component.data.backgroundImage ? 'component component-background-image' : 'container component'" v-bind:style="{ backgroundImage: component.data.backgroundImage ? `url('${component.data.backgroundImage}')` : null }">
       <about v-once v-if="component.slice_type === 'about_section'" v-bind:title="component.data.title" v-bind:text="component.data.text" v-bind:image="component.data.image" />
-      <yoga v-once v-if="component.slice_type === 'yoga'" v-bind:privateText="component.data.privateText" v-bind:lessons="component.data.lessons" />
+      <yoga v-once v-if="component.slice_type === 'yoga'" v-bind:privateText="component.data.privateText" v-bind:lessons="component.data.lessons" v-bind:title="component.data.title" />
       <testimonials v-once v-if="component.slice_type === 'testimonials'" v-bind:title="component.data.title" v-bind:image="component.data.image" v-bind:testimonials="component.data.testimonials" />
       <meditation v-once v-if="component.slice_type === 'meditation'" v-bind:title="component.data.title" v-bind:text="component.data.text" v-bind:image="component.data.image" v-bind:quote="component.data.quote" v-bind:quoteBy="component.data.quoteBy" />
       <resources v-once v-if="component.slice_type === 'resources'" v-bind:title="component.data.title" v-bind:links="component.data.links" v-bind:image="component.data.image" />
       <articles v-once v-if="component.slice_type === 'articles'" v-bind:title="component.data.title" v-bind:links="component.data.links" />
       <videos v-once v-if="component.slice_type === 'videos'" v-bind:title="component.data.title" v-bind:videos="component.data.videos" />
       <events v-once v-if="component.slice_type === 'events'" v-bind:title="component.data.title" v-bind:events="component.data.events" />
-      <movies v-once v-if="component.slice_type === 'movies'"  v-bind:title="component.data.title" v-bind:image="component.data.image" v-bind:movies="component.data.movies" />
+      <movies v-once v-if="component.slice_type === 'movies'"  v-bind:title="component.data.title" v-bind:image="component.data.image" v-bind:movies="component.data.movies" v-bind:text="component.data.text" />
       <contact v-once v-if="component.slice_type === 'contact'" v-bind:title="component.data.title" v-bind:text="component.data.text" />
     </div>
+
+    <Footer />
   </div>
 </template>
 
@@ -31,6 +33,7 @@
   import Events from './components/Events.vue';
   import Movies from './components/Movies.vue';
   import Contact from './components/Contact.vue';
+  import Footer from './components/Footer.vue';
 
   export default {
     name: 'app',
@@ -46,6 +49,7 @@
       Events,
       Movies,
       Contact,
+      Footer,
     },
     data: () => ({
       data: null,
@@ -83,7 +87,8 @@
                       '11:15-12:45pm - Stable Yoga'
                     ]
                   }
-                ]
+                ],
+                title: 'Yoga Classes',
               }
             },
             {
@@ -98,6 +103,10 @@
                   {
                     text: "This is some great text",
                     name: "Me",
+                  },
+                  {
+                    text: "I really like this text",
+                    name: "Suzie",
                   }
                 ]
               }
@@ -155,7 +164,7 @@
                     youtube: '-B2lXzolNNE',
                     description: 'This is some description'
                   }
-                ]
+                ],
               }
             },
             {
@@ -178,12 +187,18 @@
               slice_type: 'movies',
               data: {
                 title: 'Movies',
-                image: '/url',
+                backgroundImage: 'http://via.placeholder.com/1000x1000',
+                text: "A list of films related to mind and meditation",
                 movies: [
                   {
                     title: 'Some film',
                     url: 'http://google.co.uk',
                     year: '2018'
+                  },
+                  {
+                    title: 'Some other film',
+                    url: 'http://google.co.uk',
+                    year: '2017'
                   }
                 ]
               }
