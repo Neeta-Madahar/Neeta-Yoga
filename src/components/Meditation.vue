@@ -1,12 +1,12 @@
 <template>
   <div id="meditation">
     <div class="row">
-      <div class="col-md">
+      <div class="col-xs-12 col-md">
         <h2>{{ title }}</h2>
 
         <div v-html="text" />
       </div>
-      <div class="col-md">
+      <div class="col-xs-12 col-md">
         <img v-bind="imageAttributes" />
 
         <blockquote>

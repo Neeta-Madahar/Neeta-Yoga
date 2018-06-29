@@ -1,6 +1,6 @@
 <template>
   <div id="articles">
-    <h2>{{title}}</h2>
+    <h3>{{title}}</h3>
 
     <div v-for="(link, index) in this.links" v-bind:key="`article-${index}`" class="item">
       <a v-bind:href="link.url" target="_blank">{{link.title}}</a>

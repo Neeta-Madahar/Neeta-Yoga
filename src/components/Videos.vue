@@ -1,6 +1,6 @@
 <template>
   <div id="videos">
-    <h2>{{title}}</h2>
+    <h3>{{title}}</h3>
 
     <div v-for="(video, index) in this.videos" v-bind:key="`video-${index}`" class="item">
       <div class="text">
@@ -28,11 +28,16 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "../assets/sass/variables";
+  @import "../assets/sass/mixins";
 
   .item {
     margin: 20px 0;
     display: flex;
+    flex-direction: column-reverse;
+
+    @include sm {
+      flex-direction: row;
+    }
   }
 
   .video {

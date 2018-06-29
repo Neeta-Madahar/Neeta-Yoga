@@ -4,19 +4,18 @@
 
     <h3>Web links</h3>
 
-      <div v-bind:href="link.url" v-for="(link, index) in this.links" v-bind:key="`resource-${index}`" class="item">
-        <div class="text">
-          <a href="link.url" target="_blank">{{link.title}}</a>
-          <div class="description">
-            {{link.description}}
-          </div>
-        </div>
-
-        <div class="image">
-          <img v-bind="imageAttributes">
+    <div v-bind:href="link.url" v-for="(link, index) in this.links" v-bind:key="`resource-${index}`" class="item">
+      <div class="text">
+        <a href="link.url" target="_blank">{{link.title}}</a>
+        <div class="description">
+          {{link.description}}
         </div>
       </div>
 
+      <div class="image">
+        <img v-bind="imageAttributes">
+      </div>
+    </div>
   </div>
 </template>
 
@@ -40,7 +39,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "../assets/sass/variables";
+  @import "../assets/sass/mixins";
 
   a {
     font-family: $font-rubik;
@@ -56,7 +55,13 @@
   }
 
   .image {
-    width: 200px;
     text-align: center;
+    width: 200px;
+    margin: 0 auto;
+
+    @include sm {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 </style>

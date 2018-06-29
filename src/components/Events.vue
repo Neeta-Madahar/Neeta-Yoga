@@ -31,16 +31,27 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "../assets/sass/variables";
+  @import "../assets/sass/mixins";
 
   .item {
     display: flex;
     margin: 40px 0;
+    flex-direction: column;
+
+    @include sm {
+      flex-direction: row;
+    }
   }
 
   .image {
     width: 250px;
+    margin: 0 auto;
     text-align: center;
+
+    @include sm {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 
   .text {
@@ -57,5 +68,6 @@
     text-decoration: underline;
     font-family: $font-raleway;
     font-size: 18px !important;
+    text-align: center;
   }
 </style>

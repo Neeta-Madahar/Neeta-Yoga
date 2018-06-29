@@ -43,6 +43,6 @@
   .VueCarousel {
     margin-left: auto;
     margin-right: 40px;
-    width: 700px;
+    max-width: 700px;
   }
 </style>

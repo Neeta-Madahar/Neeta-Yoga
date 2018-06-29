@@ -2,8 +2,13 @@ $section-even-color: $color-orange;
 $section-odd-color: $color-pink;
 
 .component {
-  text-align: right;
   margin-bottom: 50px;
+  padding: 0 15px;
+  text-align: center;
+
+  @include sm {
+    text-align: right;
+  }
 
   &-background-image {
     padding: 40px 0;
@@ -11,7 +16,9 @@ $section-odd-color: $color-pink;
   }
 
   .row {
-    flex-direction: row-reverse;
+    @include sm {
+      flex-direction: row-reverse;
+    }
   }
 
   a {
@@ -22,14 +29,23 @@ $section-odd-color: $color-pink;
     }
   }
 
-  h3 {
-    color: $section-even-color;
-    font-size: 23px;
-  }
-
   h2 {
     border-bottom-color: $section-even-color;
-    margin-left: auto;
+    margin-left: -15px;
+    margin-right: -15px;
+
+    @include sm {
+      margin-left: auto;
+      margin-right: 0;
+      text-align: right;
+
+    }
+  }
+
+  h3 {
+    @include sm {
+      text-align: right;
+    }
   }
 
   footer {
@@ -54,28 +70,44 @@ $section-odd-color: $color-pink;
   #events {
     .item {
       justify-content: flex-end;
+      flex-direction: column-reverse;
+
+      @include sm {
+        flex-direction: row;
+      }
     }
   }
 
 
   &:nth-child(odd) {
-    text-align: left;
+
+    @include sm {
+      text-align: left;
+    }
 
     .row {
-      flex-direction: row;
+      @include sm {
+        flex-direction: row;
+      }
     }
 
     a {
       color: $section-odd-color;
     }
 
-    h3 {
-      color: $section-odd-color;
-    }
-
     h2 {
       border-bottom-color: $section-odd-color;
-      margin-left: 0;
+
+      @include sm {
+        margin-left: 0;
+        text-align: left;
+      }
+    }
+
+    h3 {
+      @include sm {
+        text-align: left;
+      }
     }
 
     footer {
@@ -99,6 +131,11 @@ $section-odd-color: $color-pink;
     #events{
       .item {
         justify-content: flex-start;
+        flex-direction: column-reverse;
+
+        @include sm {
+          flex-direction: row;
+        }
       }
 
       .image,

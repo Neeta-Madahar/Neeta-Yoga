@@ -15,7 +15,7 @@
   .footer {
     background-color: $color-grey;
     color: $color-white;
-    padding: 10px 0;
+    padding: 10px 15px;
     font-size: 16px;
   }
 </style>
