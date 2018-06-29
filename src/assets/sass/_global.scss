@@ -3,7 +3,11 @@
 body {
   font-family: $font-raleway;
   color: $color-grey;
-  font-size: 20px;
+  font-size: $font-size-body-mobile;
+
+  @include sm {
+    font-size: $font-size-body;
+  }
 }
 
 * {
@@ -17,7 +21,7 @@ h1, h2, h3, h4, h5 {
 h2 {
   border-bottom: 4px solid;
   font-size: 32px;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
   margin-bottom: 5px;
   text-align: center;
 
@@ -102,4 +106,15 @@ button::-moz-focus-inner {
   &--mobile {
     font-size: $font-size-body-mobile;
   }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
 }
