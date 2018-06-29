@@ -21,6 +21,13 @@ const yogaLessons = (lessons) => {
     if(!daysObject[lesson.day.toLowerCase()]) {
       daysObject[lesson.day.toLowerCase()] = [];
     }
+
+    daysObject[lesson.day.toLowerCase()].push({
+      lesson: lesson.lesson,
+      time: lesson.time,
+      location: lesson.location
+    });
+
     daysObject[lesson.day.toLowerCase()].push(lesson.lesson);
   });
 
@@ -45,9 +52,9 @@ export const formatData =
       case 'yoga':
         obj = {
           ...obj,
+          items: yogaLessons(item.items),
           data: {
-            privateText: richText(item.primary.private_text),
-            lessons: yogaLessons(item.items),
+            privateText: richText(item.primary.private_text)
           }
         };
         break;

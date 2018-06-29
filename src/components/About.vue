@@ -1,9 +1,8 @@
 <template>
   <div id="about">
+    <h2>{{ title }}</h2>
     <div class="row">
       <div class="col-xs-12 col-md">
-        <h2>{{ title }}</h2>
-
         <div v-html="text"></div>
       </div>
       <div class="col-xs-12 col-md">

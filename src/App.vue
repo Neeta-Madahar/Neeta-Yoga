@@ -4,7 +4,7 @@
 
     <div v-for="component in this.data" v-bind:key="component.slice_type" v-bind:class="(component.data && component.data.backgroundImage) ? 'component component-background-image' : 'container component'" v-bind:style="{ backgroundImage: (component.data && component.data.backgroundImage) ? `url('${component.data.backgroundImage}')` : null }">
       <about v-once v-if="component.slice_type === 'about_section'" v-bind:title="component.data.title" v-bind:text="component.data.text" v-bind:image="component.data.image" />
-      <yoga v-once v-if="component.slice_type === 'yoga'" v-bind:privateText="component.data.privateText" v-bind:lessons="component.data.lessons" v-bind:title="component.data.title" />
+      <yoga v-once v-if="component.slice_type === 'yoga'" v-bind:privateText="component.data.privateText" v-bind:lessons="component.items" v-bind:title="component.data.title" />
       <testimonials v-once v-if="component.slice_type === 'testimonials'" v-bind:title="component.data.title" v-bind:image="component.data.image" v-bind:testimonials="component.items" />
       <meditation v-once v-if="component.slice_type === 'meditation'" v-bind:title="component.data.title" v-bind:text="component.data.text" v-bind:image="component.data.image" v-bind:quote="component.data.quote" v-bind:quoteBy="component.data.quote_by" />
       <resources v-once v-if="component.slice_type === 'resources'" v-bind:title="component.data.title" v-bind:links="component.items" v-bind:image="component.data.image" />
@@ -71,24 +71,46 @@
             },
             {
               slice_type: 'yoga',
+              items: [
+                {
+                  day: 'Mondays',
+                  lessons: [
+                    {
+                      lesson: 'Hatha Yoga',
+                      time: '11:15-12:45pm',
+                      location: 'Stable Yoga, Kintly',
+                    },
+                    {
+                      lesson: 'Hatha Yoga',
+                      time: '1:30-2:45pm',
+                      location: 'Vodafone HQ, Newbury'
+                    }
+                  ]
+                },
+                {
+                  day: 'Tuesdays',
+                  lessons: [
+                    {
+                      lesson: 'Gentle Yoga',
+                      time: '11:15-12:45pm',
+                      location: 'Deanwood Park Golf Course, Stockcross'
+                    },
+                    {
+                      lesson: 'Gentle Yoga',
+                      time: '11:15-12:45pm',
+                      location: 'Deanwood Park Golf Course, Stockcross'
+                    },
+                    {
+                      lesson: 'Gentle Yoga',
+                      time: '11:15-12:45pm',
+                      location: 'Deanwood Park Golf Course, Stockcross'
+                    }
+                  ]
+                }
+              ],
               data: {
                 privateText: '<p>This is information about private lessons</p>',
-                title: 'Yoga Classes',
-                lessons: [
-                  {
-                    day: 'Mondays',
-                    lessons: [
-                      '11:15-12:45pm - Stable Yoga',
-                      '1:30-2:45pm - Gentle Yoga'
-                    ]
-                  },
-                  {
-                    day: 'Tuesdays',
-                    lessons: [
-                      '11:15-12:45pm - Stable Yoga'
-                    ]
-                  }
-                ]
+                title: 'Yoga Classes'
               }
             },
             {

@@ -1,5 +1,6 @@
 <template>
   <div id="meditation">
+    <h2>{{ title }}</h2>
     <div class="row">
       <div class="col-xs-12 col-md">
         <h2>{{ title }}</h2>
