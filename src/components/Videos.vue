@@ -45,7 +45,14 @@
   }
 
   .text {
-    padding: 40px;
+    padding-top: 20px;
+
+    @include sm {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 40px;
+    }
   }
 
   a {

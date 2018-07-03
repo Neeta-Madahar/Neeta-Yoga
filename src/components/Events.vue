@@ -1,6 +1,6 @@
 <template>
   <div id="events">
-    <h2>{{title}}</h2>
+    <h2>{{ title }} <i class="icon-floral_5" aria-hidden="true"></i></h2>
 
     <div v-for="(event, index) in this.events" v-bind:key="`event-${index}`" class="item">
       <div class="text">
@@ -55,8 +55,14 @@
   }
 
   .text {
-    padding: 40px;
     font-size: 18px;
+
+    @include sm {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 40px;
+    }
   }
 
   .description {
@@ -69,5 +75,18 @@
     font-family: $font-raleway;
     font-size: 18px !important;
     text-align: center;
+  }
+
+  .image {
+    display: none;
+
+    @include sm {
+      display: block;
+      max-width: 250px;
+    }
+  }
+
+  .floral-image {
+    padding: 0;
   }
 </style>

@@ -11,8 +11,18 @@ $section-odd-color: $color-pink;
   }
 
   &-background-image {
-    padding: 40px 0;
-    background-color: $color-grey;
+    padding: 40px 15px;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include sm {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    @include sm-down {
+      background-image: none!important;
+    }
   }
 
   .row {
@@ -32,7 +42,24 @@ $section-odd-color: $color-pink;
   h2 {
     border-bottom-color: $section-even-color;
 
+    [class^="icon"] {
+      align-self: center;
+      margin-left: 20px;
+
+      @include sm {
+        margin-left: 0;
+        margin-right: 20px;
+      }
+
+      &:before {
+        color: $section-even-color;
+      }
+    }
+
     @include sm {
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: row-reverse;
       margin-left: auto;
       text-align: right;
     }
@@ -95,8 +122,17 @@ $section-odd-color: $color-pink;
       border-bottom-color: $section-odd-color;
 
       @include sm {
+        flex-direction: row;
         margin-left: 0;
         text-align: left;
+      }
+
+      [class^="icon"] {
+        margin-left: 20px;
+
+        &:before {
+          color: $section-odd-color;
+        }
       }
     }
 

@@ -1,6 +1,6 @@
 <template>
   <div id="contact">
-    <h2>{{ title }}</h2>
+    <h2>{{ title }} <i class="icon-floral_2" aria-hidden="true"></i></h2>
 
     <p>{{ text }}</p>
 

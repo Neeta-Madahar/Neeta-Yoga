@@ -13,7 +13,7 @@
       </div>
 
       <div class="image">
-        <img v-bind="imageAttributes">
+        <img v-bind:src="link.image.url" v-bind:alt="link.image.alt">
       </div>
     </div>
   </div>
@@ -25,15 +25,6 @@
     props: {
       title: String,
       links: Array,
-      image: Object,
-    },
-    computed: {
-      imageAttributes: function() {
-        return {
-          src: this.image.url,
-          alt: this.image.alt
-        }
-      }
     }
   }
 </script>
@@ -52,11 +43,18 @@
 
   .item {
     display: flex;
+    margin-bottom: 20px;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .image {
     text-align: center;
-    width: 200px;
+    width: 250px;
     margin: 0 auto;
 
     @include sm {

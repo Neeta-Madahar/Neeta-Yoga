@@ -1,14 +1,12 @@
 <template>
   <div id="meditation">
-    <h2>{{ title }}</h2>
+    <h2>{{ title }} <i class="icon-floral_4" aria-hidden="true"></i></h2>
     <div class="row">
-      <div class="col-xs-12 col-md">
-        <h2>{{ title }}</h2>
-
+      <div class="col-xs-12 col-sm-6">
         <div v-html="text" />
       </div>
-      <div class="col-xs-12 col-md">
-        <img v-bind="imageAttributes" />
+      <div class="col-xs-12 col-sm-6">
+        <img v-bind="imageAttributes" class="image"/>
 
         <blockquote>
           <q>{{quote}}</q>
@@ -43,12 +41,29 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../assets/sass/_variables';
+  @import '../assets/sass/mixins';
+
+  #meditation {
+    text-align: center;
+  }
+
+  .row {
+    flex-direction: column-reverse;
+  }
 
   a {
     color: $color-grey !important;
     text-decoration: underline;
     font-weight: 700;
+  }
+
+  q {
+    margin: 20px 0;
+    display: inline-block;
+
+    @include sm {
+      margin: 0;
+    }
   }
 
   blockquote {

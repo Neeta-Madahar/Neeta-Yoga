@@ -1,12 +1,12 @@
 <template>
   <div id="yoga">
-    <h2>{{ title }}</h2>
+    <h2>{{ title }} <i class="icon-floral_2" aria-hidden="true"></i></h2>
 
     <h3>Public</h3>
 
     <div>
       <div v-for="(day, index) in this.lessons" v-bind:key="`day-${index}`" class="lessons">
-        <h4>{{ day.day }}</h4>
+        <h4>{{ day.day.charAt(0).toUpperCase() + day.day.slice(1)}}</h4>
 
         <div class="lesson-info">
           <div v-for="(lesson, index) in day.lessons" v-bind:key="`lesson-${index}`" class="lesson">
@@ -35,7 +35,7 @@
       privateText: String,
       lessons: Array,
       title: String,
-    },
+    }
   }
 </script>
 
@@ -58,6 +58,7 @@
       flex-grow: 1;
       margin-left: 10px;
       margin-right: 10px;
+      flex-basis: 100%;
     }
   }
 

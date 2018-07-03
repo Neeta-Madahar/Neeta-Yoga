@@ -2,34 +2,41 @@ import PrismicDom from 'prismic-dom';
 
 const richText = (text) => PrismicDom.RichText.asHtml(text);
 const plainText = (text) => text.length ? text[0].text : null;
-const image = (image) => image;
+const image = (image) => ({
+  url: image.url,
+  alt: image.alt
+});
 
 const formatYogaData = (obj) => {
   let returnObj = [];
   Object.keys(obj).forEach(day => {
     let dayObject = { day, lessons: [] };
-    obj[day].forEach(lesson => dayObject.lessons.push(plainText(lesson)));
+    obj[day].forEach(lesson => {
+      dayObject.lessons.push({
+        lesson: lesson.lesson,
+        time: lesson.time,
+        location: lesson.location
+      })
+    });
     returnObj.push(dayObject);
-  })
+  });
   return returnObj;
 };
 
 const yogaLessons = (lessons) => {
   let daysObject = {};
 
-  lessons.forEach((lesson) => {
-    if(!daysObject[lesson.day.toLowerCase()]) {
-      daysObject[lesson.day.toLowerCase()] = [];
+  for(let i = 0; i < lessons.length; i++) {
+    if(!daysObject[lessons[i].day.toLowerCase()]) {
+      daysObject[lessons[i].day.toLowerCase()] = [];
     }
 
-    daysObject[lesson.day.toLowerCase()].push({
-      lesson: lesson.lesson,
-      time: lesson.time,
-      location: lesson.location
+    daysObject[lessons[i].day.toLowerCase()].push({
+      lesson: plainText(lessons[i].lesson),
+      time: plainText(lessons[i].time),
+      location: plainText(lessons[i].location)
     });
-
-    daysObject[lesson.day.toLowerCase()].push(lesson.lesson);
-  });
+  }
 
   return formatYogaData(daysObject);
 };
@@ -54,7 +61,8 @@ export const formatData =
           ...obj,
           items: yogaLessons(item.items),
           data: {
-            privateText: richText(item.primary.private_text)
+            privateText: richText(item.primary.private_text),
+            title: plainText(item.primary.title)
           }
         };
         break;
@@ -83,19 +91,20 @@ export const formatData =
           }
         };
         break;
-      case 'resources':
+      case 'resource':
         obj = {
           ...obj,
           items: item.items.map(resource => ({
             title: plainText(resource.title),
             url: plainText(resource.url),
-            description: plainText(resource.description)
+            description: plainText(resource.description),
+            image: image(resource.image)
           })),
           data: {
             title: plainText(item.primary.title),
             image: image(item.primary.image)
           }
-        }
+        };
         break;
       case 'articles':
         obj = {
