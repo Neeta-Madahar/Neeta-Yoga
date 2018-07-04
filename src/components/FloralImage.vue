@@ -1,7 +1,8 @@
 <template>
   <div class="floral-image">
     <img v-bind="imageAttributes" class="image">
-    <img v-if="image" src="../assets/images/flower-power.svg" alt="" class="flowers">
+    <img v-if="image && !isSmall" src="../assets/images/flower-power.svg" alt="" class="flowers">
+    <img v-if="image && isSmall" src="../assets/images/flower-power-small.svg" alt="" class="flowers flowers--small">
   </div>
 </template>
 
@@ -10,6 +11,7 @@
     name: 'floral-image',
     props: {
       image: Object,
+      isSmall: Boolean
     },
     computed: {
       imageAttributes: function() {

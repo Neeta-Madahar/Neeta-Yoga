@@ -2,7 +2,7 @@
   <div id="events">
     <h2>{{ title }} <i class="icon-floral_5" aria-hidden="true"></i></h2>
 
-    <div v-for="(event, index) in this.events" v-bind:key="`event-${index}`" class="item">
+    <div v-for="(event, index) in this.events" :key="`event-${index}`" class="item">
       <div class="text">
         <h3>{{event.title}}</h3>
         <div class="description">
@@ -11,7 +11,7 @@
       </div>
 
       <div class="image">
-        <floral-image v-bind:image="event.image" />
+        <floral-image :image="event.image" :isSmall="true" />
       </div>
     </div>
   </div>
