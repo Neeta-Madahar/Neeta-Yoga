@@ -101,8 +101,7 @@ export const formatData =
             image: image(resource.image)
           })),
           data: {
-            title: plainText(item.primary.title),
-            image: image(item.primary.image)
+            title: plainText(item.primary.title)
           }
         };
         break;

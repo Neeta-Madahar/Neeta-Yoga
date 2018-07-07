@@ -139,7 +139,7 @@
                 alt: null
               }
             }],
-            data: {title: "Resources", image: {}}
+            data: {title: "Resources"}
           }, {
             slice_type: "articles",
             data: {title: "Articles"},
