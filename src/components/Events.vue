@@ -1,6 +1,6 @@
 <template>
   <div id="events">
-    <h2>{{ title }} <i class="icon-floral_5" aria-hidden="true"></i></h2>
+    <section-title :flower="5">{{ title }}</section-title>
 
     <div v-for="(event, index) in this.events" :key="`event-${index}`" class="item">
       <div class="text">
@@ -18,10 +18,13 @@
 </template>
 
 <script>
-  import FloralImage from "./FloralImage";
+  import FloralImage from "../common/FloralImage";
+  import SectionTitle from "../common/SectionTitle";
 
   export default {
-    components: {FloralImage},
+    components: {
+      SectionTitle,
+      FloralImage},
     name: 'events',
     props: {
       title: String,
@@ -44,7 +47,7 @@
   }
 
   .image {
-    width: 250px;
+    width: 200px;
     margin: 0 auto;
     text-align: center;
 
@@ -71,10 +74,13 @@
 
   h3 {
     margin: 0;
-    text-decoration: underline;
-    font-family: $font-raleway;
     font-size: 18px !important;
     text-align: center;
+    margin-bottom: 15px;
+
+    @include sm {
+      margin-bottom: 0;
+    }
   }
 
   .image {

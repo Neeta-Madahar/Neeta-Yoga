@@ -2,8 +2,8 @@
   <div id="articles">
     <h3>{{title}}</h3>
 
-    <div v-for="(link, index) in this.links" v-bind:key="`article-${index}`" class="item">
-      <a v-bind:href="link.url" target="_blank">{{link.title}}</a>
+    <div v-for="(link, index) in this.links" :key="`article-${index}`" class="item">
+      <a :href="link.url" target="_blank">{{link.title}}</a>
       <div>{{link.description}}</div>
     </div>
   </div>
@@ -37,5 +37,6 @@
 
   a {
     font-family: $font-rubik;
+    color: $color-orange !important;
   }
 </style>

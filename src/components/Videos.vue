@@ -2,16 +2,16 @@
   <div id="videos">
     <h3>{{title}}</h3>
 
-    <div v-for="(video, index) in this.videos" v-bind:key="`video-${index}`" class="item">
+    <div v-for="(video, index) in videos" :key="`video-${index}`" class="item">
       <div class="text">
-        <a v-bind:href="`https://www.youtube.com/watch?v=${video.youtube}`">{{video.title}}</a>
+        <a :href="`https://www.youtube.com/watch?v=${video.youtube_id}`">{{video.title}}</a>
         <div>
           {{video.description}}
         </div>
       </div>
 
       <div class="video">
-        <iframe width="100%" v-bind:src="`https://www.youtube.com/embed/${video.youtube}`" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen />
+        <iframe width="100%" :src="`https://www.youtube.com/embed/${video.youtube_id}`" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen />
       </div>
     </div>
   </div>

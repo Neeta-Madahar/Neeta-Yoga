@@ -45,6 +45,8 @@
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
+    padding: 5px;
+    height: 100%;
 
     @include sm {
       left: 0;

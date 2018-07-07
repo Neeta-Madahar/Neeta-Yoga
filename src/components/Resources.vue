@@ -1,10 +1,10 @@
 <template>
   <div id="resource">
-    <h2>{{title}}</h2>
+    <section-title :flower="2">{{ title }}</section-title>
 
     <h3>Web links</h3>
 
-    <div v-bind:href="link.url" v-for="(link, index) in this.links" v-bind:key="`resource-${index}`" class="item">
+    <div :href="link.url" v-for="(link, index) in links" :key="`resource-${index}`" class="item">
       <div class="text">
         <a href="link.url" target="_blank">{{link.title}}</a>
         <div class="description">
@@ -13,15 +13,24 @@
       </div>
 
       <div class="image">
-        <img v-bind:src="link.image.url" v-bind:alt="link.image.alt">
+        <img :src="link.image.url" :alt="link.image.alt">
       </div>
     </div>
   </div>
 </template>
 
 <script>
+  import Articles from './Articles.vue';
+  import Videos from './Videos.vue';
+  import SectionTitle from '../common/SectionTitle.vue';
+
   export default {
     name: 'resource',
+    components: {
+      Articles,
+      Videos,
+      SectionTitle
+    },
     props: {
       title: String,
       links: Array,

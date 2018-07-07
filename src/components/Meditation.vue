@@ -1,6 +1,7 @@
 <template>
   <div id="meditation">
-    <h2>{{ title }} <i class="icon-floral_4" aria-hidden="true"></i></h2>
+    <section-title :flower="4">{{ title }}</section-title>
+
     <div class="row">
       <div class="col-xs-12 col-sm-6">
         <div v-html="text" />
@@ -20,6 +21,8 @@
 </template>
 
 <script>
+  import SectionTitle from '../common/SectionTitle.vue';
+
   export default {
     name: 'meditation',
     props: {
@@ -37,6 +40,9 @@
         }
       }
     },
+    components: {
+      SectionTitle
+    }
   }
 </script>
 

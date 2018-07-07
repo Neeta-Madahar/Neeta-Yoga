@@ -150,6 +150,7 @@ export const formatData =
           ...obj,
           data: {
             title: plainText(item.primary.title),
+            text: plainText(item.primary.text),
             backgroundImage: image(item.primary.image),
           },
           items: item.items.map(movie => ({

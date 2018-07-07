@@ -14,6 +14,7 @@ $section-odd-color: $color-pink;
     padding: 40px 15px;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center center;
 
     @include sm {
       padding-left: 0;
@@ -101,6 +102,12 @@ $section-odd-color: $color-pink;
     }
   }
 
+  #events {
+    h3 {
+      color: $section-even-color;
+    }
+  }
+
 
   &:nth-child(odd) {
 
@@ -177,6 +184,12 @@ $section-odd-color: $color-pink;
 
       .text {
         order: 2;
+      }
+    }
+
+    #events {
+      h3 {
+        color: $section-odd-color;
       }
     }
   }

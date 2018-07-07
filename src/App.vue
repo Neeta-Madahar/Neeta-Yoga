@@ -2,17 +2,17 @@
   <div id='app'>
     <Hero/>
 
-    <div v-for="component in this.data" v-bind:key="component.slice_type" v-bind:class="(component.data && component.data.backgroundImage) ? 'component component-background-image' : 'container component'" v-bind:style="{ backgroundImage: (component.data && component.data.backgroundImage) ? `url('${component.data.backgroundImage.url}')` : null }">
-      <about v-once v-if="component.slice_type === 'about_section'" v-bind:title="component.data.title" v-bind:text="component.data.text" v-bind:image="component.data.image"/>
-      <yoga v-once v-if="component.slice_type === 'yoga'" v-bind:privateText="component.data.privateText" v-bind:lessons="component.items" v-bind:title="component.data.title"/>
-      <testimonials v-once v-if="component.slice_type === 'testimonials'" v-bind:title="component.data.title" v-bind:image="component.data.image" v-bind:testimonials="component.items"/>
-      <meditation v-once v-if="component.slice_type === 'meditation'" v-bind:title="component.data.title" v-bind:text="component.data.text" v-bind:image="component.data.image" v-bind:quote="component.data.quote" v-bind:quoteBy="component.data.quote_by"/>
-      <resources v-once v-if="component.slice_type === 'resource'" v-bind:title="component.data.title" v-bind:links="component.items"/>
-      <articles v-once v-if="component.slice_type === 'articles'" v-bind:title="component.data.title" v-bind:links="component.items"/>
-      <videos v-once v-if="component.slice_type === 'videos'" v-bind:title="component.data.title" v-bind:videos="component.items"/>
-      <events v-once v-if="component.slice_type === 'events'" v-bind:title="component.data.title" v-bind:events="component.items"/>
-      <movies v-once v-if="component.slice_type === 'movies'" v-bind:title="component.data.title" v-bind:movies="component.items" v-bind:image="component.data.backgroundImage"/>
-      <contact v-once v-if="component.slice_type === 'contact'" v-bind:title="component.data.title" v-bind:text="component.data.text"/>
+    <div v-for="component in data" :key="component.slice_type" :class="(component.data && component.data.backgroundImage) ? 'component component-background-image' : 'container component'" :style="{ backgroundImage: (component.data && component.data.backgroundImage) ? `url('${component.data.backgroundImage.url}')` : null }">
+      <about v-once v-if="component.slice_type === 'about_section'" :title="component.data.title" :text="component.data.text" :image="component.data.image"/>
+      <yoga v-once v-if="component.slice_type === 'yoga'" :privateText="component.data.privateText" :lessons="component.items" :title="component.data.title"/>
+      <testimonials v-once v-if="component.slice_type === 'testimonials'" :title="component.data.title" :image="component.data.image" :testimonials="component.items"/>
+      <meditation v-once v-if="component.slice_type === 'meditation'" :title="component.data.title" :text="component.data.text" :image="component.data.image" :quote="component.data.quote" :quoteBy="component.data.quote_by"/>
+      <resources v-once v-if="component.slice_type === 'resource'" :title="component.data.title" :links="component.items"/>
+      <articles v-once v-if="component.slice_type === 'articles'" :title="component.data.title" :links="component.items"/>
+      <videos v-once v-if="component.slice_type === 'videos'" :title="component.data.title" :videos="component.items"/>
+      <events v-once v-if="component.slice_type === 'events'" :title="component.data.title" :events="component.items"/>
+      <movies v-once v-if="component.slice_type === 'movies'" :title="component.data.title" :movies="component.items" :image="component.data.backgroundImage" :text="component.data.text"/>
+      <contact v-once v-if="component.slice_type === 'contact'" :title="component.data.title" :text="component.data.text"/>
     </div>
 
     <Footer/>
@@ -95,7 +95,12 @@
             data: {privateText: "<p>This is the private text!</p>", title: "Yoga"}
           }, {
             slice_type: "testimonials",
-            items: [{text: "This is some great text", name: "Suzie James"}],
+            items: [
+              {text: "This is some great text", name: "Suzie James"},
+              {text: "This is some great text", name: "Suzie James"},
+              {text: "This is some great text", name: "Suzie James"},
+              {text: "This is some great text", name: "Suzie James"}
+            ],
             data: {
               title: "Testimonials",
               image: {
@@ -161,6 +166,20 @@
                 url: "https://wroomdev.s3.amazonaws.com/tutoblanktemplate%2F97109f41-140e-4dc9-a2c8-96fb10f14051_star.gif",
                 alt: null
               }
+            }, {
+              title: "This is an event",
+              description: "This is an event description",
+              image: {
+                url: "https://wroomdev.s3.amazonaws.com/tutoblanktemplate%2F97109f41-140e-4dc9-a2c8-96fb10f14051_star.gif",
+                alt: null
+              }
+            }, {
+              title: "This is an event",
+              description: "This is an event description",
+              image: {
+                url: "https://wroomdev.s3.amazonaws.com/tutoblanktemplate%2F97109f41-140e-4dc9-a2c8-96fb10f14051_star.gif",
+                alt: null
+              }
             }]
           }, {
             slice_type: "movies",
@@ -169,10 +188,29 @@
               backgroundImage: {
                 url: "https://art-and-yoga.cdn.prismic.io/art-and-yoga/6613439facc97759c882ad25201749770adbca64_cinema.jpg",
                 alt: null
-              }
+              },
+              text: 'This is some introductory text'
             },
-            items: [{title: "Movie title", url: "https://imdb.com", year: "2018"}]
-          }, {slice_type: "contact", data: {title: "Contact", text: "Get in touch with us here"}}];
+            items: [
+              {title: "Movie title", url: "https://imdb.com", year: "2018"},
+              {title: "Movie title", url: "https://imdb.com", year: "2018"},
+              {title: "Movie title", url: "https://imdb.com", year: "2018"},
+              {title: "Movie title", url: "https://imdb.com", year: "2018"},
+              {title: "Movie title", url: "https://imdb.com", year: "2018"},
+              {title: "Movie title", url: "https://imdb.com", year: "2018"},
+              {title: "Movie title", url: "https://imdb.com", year: "2018"},
+              {title: "Movie title", url: "https://imdb.com", year: "2018"},
+              {title: "Movie title", url: "https://imdb.com", year: "2018"},
+              {title: "Movie title", url: "https://imdb.com", year: "2018"},
+            ]
+          }, {
+            slice_type: "contact",
+            data: {
+              title: "Contact",
+              text: "Get in touch with us here"
+            }
+          }
+          ];
         } else {
           const API_ENDPOINT = 'https://art-and-yoga.cdn.prismic.io/api/v2';
           Prismic.api(API_ENDPOINT)

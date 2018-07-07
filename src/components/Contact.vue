@@ -1,6 +1,6 @@
 <template>
   <div id="contact">
-    <h2>{{ title }} <i class="icon-floral_2" aria-hidden="true"></i></h2>
+    <section-title :flower="2">{{ title }}</section-title>
 
     <p>{{ text }}</p>
 
@@ -12,7 +12,9 @@
 </template>
 
 <script>
+  import SectionTitle from "../common/SectionTitle";
   export default {
+    components: {SectionTitle},
     name: 'contact',
     props: {
       title: String,

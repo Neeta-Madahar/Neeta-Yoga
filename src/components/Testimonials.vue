@@ -1,15 +1,15 @@
 <template>
   <div id="testimonials">
-    <h2>{{ title }} <i class="icon-floral_3" aria-hidden="true"></i></h2>
+    <section-title :flower="3">{{ title }}</section-title>
 
     <div class="row">
       <div class="col-sm-offset-6">
-        <floral-image v-bind:image="image" />
+        <floral-image :image="image" />
       </div>
     </div>
 
-    <carousel :autoplay="true" :paginationEnabled="false" :navigationEnabled="true" :perPageCustom="[[320, 1]]">
-      <slide v-for="(testimonial, index) in testimonials" v-bind:key="`testimonial-${index}`">
+    <carousel v-bind="carouselSettings">
+      <slide v-for="(testimonial, index) in testimonials" :key="`testimonial-${index}`">
         <blockquote>
           <q>{{ testimonial.text }}</q>
 
@@ -24,7 +24,9 @@
 
 <script>
   import { Carousel, Slide } from 'vue-carousel';
-  import FloralImage from './FloralImage.vue';
+  import FloralImage from '../common/FloralImage.vue';
+  import SectionTitle from '../common/SectionTitle.vue';
+
 
   export default {
     name: 'testimonials',
@@ -33,10 +35,24 @@
       image: Object,
       testimonials: Array,
     },
+    data: function () {
+      return {
+        carouselSettings: {
+          autoplay: true,
+          paginationEnabled: false,
+          navigationEnabled: true,
+          navigationNextLabel: "",
+          navigationPrevLabel: "",
+          perPageCustom: [[320, 1]],
+
+        }
+      }
+    },
     components: {
       FloralImage,
       Carousel,
-      Slide
+      Slide,
+      SectionTitle
     }
   }
 </script>
@@ -55,15 +71,5 @@
   q {
     margin-bottom: 30px;
     display: inline-block;
-  }
-
-  .VueCarousel {
-    margin: 0 30px;
-
-    @include sm {
-      margin-left: auto;
-      margin-right: 40px;
-      max-width: 700px;
-    }
   }
 </style>

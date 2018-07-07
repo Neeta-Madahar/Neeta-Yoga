@@ -1,19 +1,20 @@
 <template>
   <div id="about">
-    <h2>{{ title }} <i class="icon-floral_1" aria-hidden="true"></i></h2>
+    <section-title :flower="1">{{ title }}</section-title>
     <div class="row">
       <div class="col-xs-12 col-sm">
         <div v-html="text"></div>
       </div>
       <div class="col-xs-12 col-sm">
-        <floral-image v-bind:image="image" />
+        <floral-image :image="image" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-  import FloralImage from './FloralImage.vue';
+  import FloralImage from '../common/FloralImage.vue';
+  import SectionTitle from '../common/SectionTitle.vue';
 
   export default {
     name: 'about',
@@ -23,7 +24,8 @@
       image: Object,
     },
     components: {
-      FloralImage
+      FloralImage,
+      SectionTitle
     }
   }
 </script>

@@ -1,19 +1,21 @@
 <template>
   <div id="movies" class="container">
-    <h2>{{ title }} <i class="icon-floral_1" aria-hidden="true"></i></h2>
+    <section-title :flower="1">{{ title }}</section-title>
+
+    <img :src="image.url" alt="" class="image">
 
     <p>{{ text }}</p>
 
-    <img v-bind:src="image.url" alt="" class="image">
-
-    <div v-for="(movie, index) in this.movies" v-bind:key="`movie-${index}`" class="item">
-      <a v-bind:href="movie.url" target="_blank">{{movie.title}}</a> ({{movie.year}})
+    <div v-for="(movie, index) in movies" :key="`movie-${index}`" class="item">
+      <a :href="movie.url" target="_blank">{{movie.title}}</a> ({{movie.year}})
     </div>
   </div>
 </template>
 
 <script>
+  import SectionTitle from "../common/SectionTitle";
   export default {
+    components: {SectionTitle},
     name: 'movies',
     props: {
       title: String,
@@ -36,6 +38,14 @@
   a {
     @include sm {
       color: $color-white !important;
+    }
+  }
+
+  p {
+    color: $color-orange;
+
+    @include sm {
+      color: $color-white;
     }
   }
 

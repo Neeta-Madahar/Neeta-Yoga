@@ -1,15 +1,15 @@
 <template>
   <div id="yoga">
-    <h2>{{ title }} <i class="icon-floral_2" aria-hidden="true"></i></h2>
+    <section-title :flower="2">{{ title }}</section-title>
 
     <h3>Public</h3>
 
     <div>
-      <div v-for="(day, index) in this.lessons" v-bind:key="`day-${index}`" class="lessons">
+      <div v-for="(day, index) in lessons" :key="`day-${index}`" class="lessons">
         <h4>{{ day.day.charAt(0).toUpperCase() + day.day.slice(1)}}</h4>
 
         <div class="lesson-info">
-          <div v-for="(lesson, index) in day.lessons" v-bind:key="`lesson-${index}`" class="lesson">
+          <div v-for="(lesson, index) in day.lessons" :key="`lesson-${index}`" class="lesson">
             <h5>{{ lesson.lesson }}</h5>
 
             <strong>{{ lesson.time }}</strong>
@@ -29,7 +29,9 @@
 </template>
 
 <script>
+  import SectionTitle from "../common/SectionTitle";
   export default {
+    components: {SectionTitle},
     name: 'yoga',
     props: {
       privateText: String,

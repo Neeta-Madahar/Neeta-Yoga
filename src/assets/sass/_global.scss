@@ -18,18 +18,6 @@ h1, h2, h3, h4, h5 {
   font-family: $font-rubik-bold;
 }
 
-h2 {
-  border-bottom: 4px solid;
-  font-size: 32px;
-  padding-bottom: 15px;
-  margin-bottom: 15px;
-  text-align: center;
-
-  @include sm {
-    width: 350px;
-  }
-}
-
 h3 {
   color: $color-grey;
   font-size: 23px;
@@ -125,4 +113,68 @@ button::-moz-focus-inner {
 
 .image {
   max-width: 100%;
+}
+
+.VueCarousel {
+  margin: 0 50px;
+
+  @include sm {
+    margin-left: auto;
+    margin-right: 40px;
+    max-width: 700px;
+  }
+
+  button {
+    padding: 12px 10px;
+
+    &:hover {
+      background: none !important;
+    }
+  }
+
+  &-navigation-button {
+    margin-top: 20px;
+
+    &:before {
+      font-family: 'icomoon';
+      font-size: 20px;
+      display: block;
+    }
+  }
+
+  &-navigation-prev:before {
+    content: "\e905";
+    transform: rotate(90deg);
+  }
+
+  &-navigation-next:before {
+    content: "\e905";
+    transform: rotate(-90deg);
+  }
+
+  &-wrapper {
+    padding-top: 25px;
+
+    @include sm {
+      padding-top: 50px;
+    }
+
+    &:before, &:after {
+      font-family: 'icomoon';
+      content: "\e90d";
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 34px;
+      display: none;
+
+      @include sm {
+        display: block;
+      }
+    }
+
+    &:after {
+      left: 30px;
+    }
+  }
 }

@@ -8,11 +8,11 @@
             <i class="icon-close2" />
           </button>
         </li>
-        <li><a href="#">About </a></li>
-        <li><a href="#">Yoga Classes </a></li>
-        <li><a href="#">Meditation </a></li>
+        <li><a href="#about">About </a></li>
+        <li><a href="#yoga">Yoga Classes </a></li>
+        <li><a href="#meditation">Meditation </a></li>
         <li><a href="#">Explore </a><i class="icon-chevron" /></li>
-        <li><a href="#">Contact </a></li>
+        <li><a href="#contact">Contact </a></li>
       </ul>
     </nav>
 
@@ -26,8 +26,9 @@
 </template>
 
 <script>
-
+  export default { }
 </script>
+
 <style lang="scss" scoped>
 @import '../assets/sass/_mixins.scss';
 @import '../assets/sass/_utilities.scss';
