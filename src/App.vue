@@ -1,6 +1,6 @@
 <template>
   <div id='app'>
-    <Hero/>
+    <Hero :menuOpen="menuOpen" :toggle="toggleMenu"/>
 
     <div v-for="component in data" :key="component.slice_type" :class="(component.data && component.data.backgroundImage) ? 'component component-background-image' : 'container component'" :style="{ backgroundImage: (component.data && component.data.backgroundImage) ? `url('${component.data.backgroundImage.url}')` : null }">
       <about v-once v-if="component.slice_type === 'about_section'" :title="component.data.title" :text="component.data.text" :image="component.data.image"/>
@@ -53,6 +53,7 @@
     },
     data: () => ({
       data: null,
+      menuOpen: false
     }),
     methods: {
       getContent () {
@@ -216,6 +217,17 @@
           Prismic.api(API_ENDPOINT)
             .then(api => api.getByUID('yoga', 'yoga'))
             .then(response => this.data = formatData(response.data.body));
+        }
+      },
+      toggleMenu: function(isScroll) {
+        this.menuOpen = !this.menuOpen;
+
+        if(!isScroll) {
+          if (this.menuOpen) {
+            document.body.classList.add('menu-open');
+          } else {
+            document.body.classList.remove('menu-open');
+          }
         }
       }
     },
