@@ -12,7 +12,7 @@
           <div v-for="(lesson, index) in day.lessons" :key="`lesson-${index}`" class="lesson">
             <h5>{{ lesson.lesson }}</h5>
 
-            <strong>{{ lesson.time }}</strong>
+            <strong class="lesson-time">{{ lesson.time }}</strong>
 
             <div class="location">
               {{ lesson.location }}
@@ -61,6 +61,10 @@
       margin-left: 10px;
       margin-right: 10px;
       flex-basis: 100%;
+
+      &-time {
+        font-size: $font-size-s;
+      }
     }
   }
 
@@ -92,12 +96,20 @@
 
   .location {
     color: $color-pink;
+    font-size: $font-size-body-mobile;
+    @include sm {
+      font-size: $font-size-body
+    }
   }
 
   h5 {
     margin: 0;
     font-family: $font-raleway;
     font-weight: 400;
+    font-size: $font-size-body-mobile;
+    @include sm {
+      font-size: $font-size-body
+    }
   }
 
   strong {
@@ -107,5 +119,10 @@
 
   .private {
     text-align: left;
+    font-size: $font-size-body-mobile;
+
+    @include sm {
+      font-size: $font-size-body
+    }
   }
 </style>

@@ -6,7 +6,7 @@
       <div class="col-xs-12 col-sm-6">
         <div v-html="text" />
       </div>
-      <div class="col-xs-12 col-sm-6">
+      <div class="col-xs-12 col-sm-6 image-half">
         <img v-bind="imageAttributes" class="image"/>
 
         <blockquote>
@@ -49,7 +49,7 @@
 <style lang="scss" scoped>
   @import '../assets/sass/mixins';
 
-  #meditation {
+  .image-half {
     text-align: center;
   }
 
@@ -73,11 +73,17 @@
   }
 
   blockquote {
-    font-size: 16px;
+    font-size: $font-size-body-mobile;
+
+    @include sm {
+      font-size: $font-size-body;
+    }
   }
 
   footer {
     color: $color-grey !important;
     font-family: $font-raleway !important;
+
+
   }
 </style>

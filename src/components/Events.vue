@@ -3,12 +3,7 @@
     <section-title :flower="5">{{ title }}</section-title>
 
     <div v-for="(event, index) in this.events" :key="`event-${index}`" class="item">
-      <div class="text">
-        <h3>{{event.title}}</h3>
-        <div class="description">
-          {{event.description}}
-        </div>
-      </div>
+      <list-entry :heading="event.title" :text="event.description" />
 
       <div class="image">
         <floral-image :image="event.image" :isSmall="true" />
@@ -20,11 +15,14 @@
 <script>
   import FloralImage from "../common/FloralImage";
   import SectionTitle from "../common/SectionTitle";
+  import ListEntry from "../common/ListEntry";
 
   export default {
     components: {
       SectionTitle,
-      FloralImage},
+      FloralImage,
+      ListEntry,
+    },
     name: 'events',
     props: {
       title: String,
@@ -58,7 +56,7 @@
   }
 
   .text {
-    font-size: 18px;
+    font-size: $font-size-body-mobile;
 
     @include sm {
       display: flex;
@@ -68,15 +66,12 @@
     }
   }
 
-  .description {
-    font-style: italic;
-  }
-
   h3 {
     margin: 0;
     font-size: 18px !important;
     text-align: center;
     margin-bottom: 15px;
+    font-family: $font-raleway;
 
     @include sm {
       margin-bottom: 0;

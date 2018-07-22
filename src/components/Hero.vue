@@ -37,10 +37,10 @@
 
     <nav class="mobile-navigation" :class="{active: menuOpen}">
       <ul>
-        <li class="mobile-navigation-link"><a href="#about" @click="scroll">About </a></li>
-        <li class="mobile-navigation-link"><a href="#yoga" @click="scroll">Yoga Classes </a></li>
-        <li class="mobile-navigation-link"><a href="#meditation" @click="scroll">Meditation </a></li>
-        <li :class="{'dropdown-active': dropdownActive}">
+        <li class="mobile-navigation-link link-1"><a href="#about" @click="scroll">About </a></li>
+        <li class="mobile-navigation-link link-2"><a href="#yoga" @click="scroll">Yoga Classes </a></li>
+        <li class="mobile-navigation-link link-3"><a href="#meditation" @click="scroll">Meditation </a></li>
+        <li class="link-4" :class="{'dropdown-active': dropdownActive}">
           <button @click="showDropdown" class="dropdown-trigger" aria-haspopup="true" :aria-expanded="dropdownActive ? 'true' : 'false'">
             Explore
             <i class="icon-chevron" />
@@ -52,7 +52,7 @@
             <li><a href="#videos" @click=scroll>Videos</a></li>
           </ul>
         </li>
-        <li class="mobile-navigation-link"><a href="#contact" @click="scroll">Contact </a></li>
+        <li class="link-5 mobile-navigation-link"><a href="#contact" @click="scroll">Contact </a></li>
       </ul>
     </nav>
   </div>
@@ -81,7 +81,7 @@
 
         this.dropdownActive = false;
 
-        this.toggle(true);
+        this.toggle(e, true);
       }
     },
     data: () => ({
@@ -233,11 +233,11 @@
     color: $color-white;
     font-family: $font-rubik;
     font-weight: normal;
-    font-size: $font-size-heading3;
+    font-size: $font-size-l;
 
     @include sm {
       text-align: center;
-      font-size: $font-size-heading2;
+      font-size: $font-size-xl;
       max-width: 100%;
     }
 
@@ -276,6 +276,10 @@
 
     transition: opacity .3s ease;
 
+    &-link {
+      padding: 10px;
+    }
+
     @include sm {
       display: none;
     }
@@ -285,8 +289,8 @@
       left: 0;
 
       .mobile-navigation-link,
-      .dropdown-trigger {
-        transform: translateX(0);
+      .link-4 {
+        opacity: 1;
       }
     }
 
@@ -337,9 +341,31 @@
     }
 
     .mobile-navigation-link,
-    .dropdown-trigger{
-      transform: translateX(50px);
-      transition: transform .3s ease;
+    .link-4{
+      opacity: 0;
+      transition: opacity 3s ease;
+    }
+
+    .link {
+      // &-1 {
+      //   transition-delay: .1s;
+      // }
+
+      &-2 {
+       transition-delay: .3s;
+      }
+
+      &-3 {
+       transition-delay: .5s;
+      }
+
+      &-4 {
+       transition-delay: .7s;
+      }
+
+      &-5 {
+       transition-delay: .9s;
+      }
     }
   }
 

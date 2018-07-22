@@ -2,7 +2,7 @@ $section-even-color: $color-orange;
 $section-odd-color: $color-pink;
 
 .component {
-  margin-bottom: 50px;
+  margin-bottom: 100px;
   padding: 0 15px;
   text-align: center;
 
@@ -102,10 +102,8 @@ $section-odd-color: $color-pink;
     }
   }
 
-  #events {
-    h3 {
+  .list-entry-heading {
       color: $section-even-color;
-    }
   }
 
 

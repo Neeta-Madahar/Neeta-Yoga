@@ -1,5 +1,5 @@
 <template>
-  <div id="about">
+  <div id="about" class="about">
     <section-title :flower="1">{{ title }}</section-title>
     <div class="row">
       <div class="col-xs-12 col-sm">
@@ -31,5 +31,9 @@
 </script>
 
 <style lang="scss" scoped>
+
+.about {
+  margin-top: 100px;
+}
 
 </style>

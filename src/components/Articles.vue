@@ -2,19 +2,23 @@
   <div id="articles">
     <h3>{{title}}</h3>
 
-    <div v-for="(link, index) in this.links" :key="`article-${index}`" class="item">
-      <a :href="link.url" target="_blank">{{link.title}}</a>
-      <div>{{link.description}}</div>
+    <div v-for="(article, index) in articles" :key="`article-${index}`" class="item">
+      <list-entry :heading="article.title" :text="article.description" :url="article.url"  />
     </div>
+
   </div>
 </template>
 
 <script>
+  import ListEntry from "../common/ListEntry";
   export default {
     name: 'articles',
+    components: {
+      ListEntry,
+    },
     props: {
       title: String,
-      links: Array,
+      articles: Array,
       image: Object,
     },
     computed: {

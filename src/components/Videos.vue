@@ -3,12 +3,7 @@
     <h3>{{title}}</h3>
 
     <div v-for="(video, index) in videos" :key="`video-${index}`" class="item">
-      <div class="text">
-        <a :href="`https://www.youtube.com/watch?v=${video.youtube_id}`">{{video.title}}</a>
-        <div>
-          {{video.description}}
-        </div>
-      </div>
+      <list-entry :heading="video.title" :text="video.description" />
 
       <div class="video">
         <iframe width="100%" :src="`https://www.youtube.com/embed/${video.youtube_id}`" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen />
@@ -18,8 +13,12 @@
 </template>
 
 <script>
+  import ListEntry from '../common/ListEntry';
   export default {
     name: 'videos',
+    components: {
+      ListEntry,
+    },
     props: {
       title: String,
       videos: Array,

@@ -8,7 +8,7 @@
       <testimonials v-once v-if="component.slice_type === 'testimonials'" :title="component.data.title" :image="component.data.image" :testimonials="component.items"/>
       <meditation v-once v-if="component.slice_type === 'meditation'" :title="component.data.title" :text="component.data.text" :image="component.data.image" :quote="component.data.quote" :quoteBy="component.data.quote_by"/>
       <resources v-once v-if="component.slice_type === 'resource'" :title="component.data.title" :links="component.items"/>
-      <articles v-once v-if="component.slice_type === 'articles'" :title="component.data.title" :links="component.items"/>
+      <articles v-once v-if="component.slice_type === 'articles'" :title="component.data.title" :articles="component.items"/>
       <videos v-once v-if="component.slice_type === 'videos'" :title="component.data.title" :videos="component.items"/>
       <events v-once v-if="component.slice_type === 'events'" :title="component.data.title" :events="component.items"/>
       <movies v-once v-if="component.slice_type === 'movies'" :title="component.data.title" :movies="component.items" :image="component.data.backgroundImage" :text="component.data.text"/>
@@ -219,16 +219,14 @@
             .then(response => this.data = formatData(response.data.body));
         }
       },
-      toggleMenu: function(isScroll) {
+      toggleMenu: function(e, isScroll = false) {
         this.menuOpen = !this.menuOpen;
 
-        if(!isScroll) {
-          if (this.menuOpen) {
+        if(this.menu && !isScroll) {
             document.body.classList.add('menu-open');
-          } else {
-            document.body.classList.remove('menu-open');
-          }
+            return;
         }
+        document.body.classList.remove('menu-open');
       }
     },
     beforeMount () {

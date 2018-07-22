@@ -20,7 +20,7 @@ h1, h2, h3, h4, h5 {
 
 h3 {
   color: $color-grey;
-  font-size: 23px;
+  font-size: $font-size-m;
   margin: 30px 0 20px;
   text-align: center;
 
@@ -84,13 +84,13 @@ button::-moz-focus-inner {
 
 .font {
   &--h1 {
-    font-size: $font-size-heading1;
+    font-size: $font-size-xxl;
   }
   &--h2 {
-    font-size: $font-size-heading2;
+    font-size: $font-size-xl;
   }
   &--h3 {
-    font-size: $font-size-heading3;
+    font-size: $font-size-l;
   }
   &--body {
     font-size: $font-size-body;
@@ -127,7 +127,7 @@ button::-moz-focus-inner {
   button {
     padding: 12px 10px;
 
-    &:hover {
+    @include hover-focus {
       background: none !important;
     }
   }
@@ -145,11 +145,14 @@ button::-moz-focus-inner {
   &-navigation-prev:before {
     content: "\e905";
     transform: rotate(90deg);
+    color: $color-grey;
+    opacity: 1;
   }
 
   &-navigation-next:before {
     content: "\e905";
     transform: rotate(-90deg);
+    color: $color-grey;
   }
 
   &-wrapper {

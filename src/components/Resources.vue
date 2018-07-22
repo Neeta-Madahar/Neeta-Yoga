@@ -5,12 +5,7 @@
     <h3>Web links</h3>
 
     <div :href="link.url" v-for="(link, index) in links" :key="`resource-${index}`" class="item">
-      <div class="text">
-        <a href="link.url" target="_blank">{{link.title}}</a>
-        <div class="description">
-          {{link.description}}
-        </div>
-      </div>
+      <list-entry :heading="link.title" :text="link.description" :url="link.url" />
 
       <div class="image">
         <img :src="link.image.url" :alt="link.image.alt">
@@ -23,13 +18,15 @@
   import Articles from './Articles.vue';
   import Videos from './Videos.vue';
   import SectionTitle from '../common/SectionTitle.vue';
+  import ListEntry from "../common/ListEntry";
 
   export default {
     name: 'resource',
     components: {
       Articles,
       Videos,
-      SectionTitle
+      SectionTitle,
+      ListEntry
     },
     props: {
       title: String,
@@ -48,6 +45,9 @@
   .description {
     color: $color-grey;
     font-size: 16px;
+    @include sm {
+      font-size: $font-size-body
+    }
   }
 
   .item {
