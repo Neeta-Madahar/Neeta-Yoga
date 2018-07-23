@@ -9,8 +9,10 @@
     "start": "yarn run serve"
   },
   "dependencies": {
+    "js-cookie": "^2.2.0",
     "prismic-dom": "^2.1.0",
     "prismic-javascript": "^1.5.0-beta.3",
+    "qs": "^6.5.2",
     "smoothscroll-polyfill": "^0.4.3",
     "vue": "^2.5.16",
     "vue-carousel": "^0.8.1"

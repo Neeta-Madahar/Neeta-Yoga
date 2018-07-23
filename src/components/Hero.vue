@@ -20,12 +20,10 @@
 
           <ul class="dropdown" role="menu" aria-label="Explore">
             <li><a href="#resource" @click="scroll">Resources</a></li>
-            <li><a href="#articles" @click=scroll>Articles</a></li>
-            <li><a href="#videos" @click=scroll>Videos</a></li>
+            <li><a href="#events" @click=scroll>Events</a></li>
+            <li><a href="#movies" @click=scroll>Movies</a></li>
           </ul>
         </li>
-        <li><a href="#events" @click=scroll>Events</a></li>
-        <li><a href="#movies" @click=scroll>Movies</a></li>
         <li><a href="#contact" @click="scroll">Contact </a></li>
       </ul>
     </nav>
@@ -48,8 +46,8 @@
 
           <ul class="dropdown" role="menu" aria-label="Explore">
             <li><a href="#resource" @click="scroll">Resources</a></li>
-            <li><a href="#articles" @click=scroll>Articles</a></li>
-            <li><a href="#videos" @click=scroll>Videos</a></li>
+            <li><a href="#events" @click=scroll>Events</a></li>
+            <li><a href="#movies" @click=scroll>Movies</a></li>
           </ul>
         </li>
         <li class="link-5 mobile-navigation-link"><a href="#contact" @click="scroll">Contact </a></li>
@@ -162,7 +160,7 @@
       left: 0;
       padding: 0;
       width: 200px;
-      background: rgba($color-white, .6);
+      background: rgba($color-white, .8);
       margin-top: 10px;
 
       li {
