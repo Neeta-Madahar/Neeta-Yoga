@@ -4,7 +4,7 @@
       {{ heading }}
     </h4>
 
-    <a v-if="url" :href="url" target="_blank">
+    <a class="list-entry-heading" v-if="url" :href="url" target="_blank">
       {{ heading }}
     </a>
 
@@ -33,7 +33,8 @@
     margin: 0;
   }
 
-  .list-entry-heading, a {
+  .list-entry-heading {
+
     margin: 0;
     font-family: $font-rubik-bold;
     font-size: $font-size-s;

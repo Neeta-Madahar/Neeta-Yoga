@@ -32,7 +32,8 @@
 
 <style lang="scss" scoped>
 
-.about {
+#about {
+
   margin-top: 100px;
 }
 

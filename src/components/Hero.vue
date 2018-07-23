@@ -347,10 +347,6 @@
     }
 
     .link {
-      // &-1 {
-      //   transition-delay: .1s;
-      // }
-
       &-2 {
        transition-delay: .3s;
       }
