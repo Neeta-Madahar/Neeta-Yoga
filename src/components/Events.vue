@@ -88,6 +88,7 @@
   }
 
   .floral-image {
-    padding: 0;
+    width: 175px;
+    height: 175px;
   }
 </style>

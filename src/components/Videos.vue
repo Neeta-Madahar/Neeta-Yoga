@@ -40,7 +40,13 @@
   }
 
   .video {
-    max-width: 350px;
+    flex: 0 0 267px;
+    max-width: 267px;
+    margin: 0 auto;
+
+    @include sm {
+      margin: 0;
+    }
   }
 
   .text {

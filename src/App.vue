@@ -164,21 +164,21 @@
               title: "This is an event",
               description: "This is an event description",
               image: {
-                url: "https://wroomdev.s3.amazonaws.com/tutoblanktemplate%2F97109f41-140e-4dc9-a2c8-96fb10f14051_star.gif",
+                url: "https://art-and-yoga.cdn.prismic.io/art-and-yoga/4770776f1502e87c372ecd437584e86b844b2956_003-sarum-college-26th-september-2015-by-ash-mills-edited-300x200.jpg",
                 alt: null
               }
             }, {
               title: "This is an event",
               description: "This is an event description",
               image: {
-                url: "https://wroomdev.s3.amazonaws.com/tutoblanktemplate%2F97109f41-140e-4dc9-a2c8-96fb10f14051_star.gif",
+                url: "https://art-and-yoga.cdn.prismic.io/art-and-yoga/4770776f1502e87c372ecd437584e86b844b2956_003-sarum-college-26th-september-2015-by-ash-mills-edited-300x200.jpg",
                 alt: null
               }
             }, {
               title: "This is an event",
               description: "This is an event description",
               image: {
-                url: "https://wroomdev.s3.amazonaws.com/tutoblanktemplate%2F97109f41-140e-4dc9-a2c8-96fb10f14051_star.gif",
+                url: "https://art-and-yoga.cdn.prismic.io/art-and-yoga/4770776f1502e87c372ecd437584e86b844b2956_003-sarum-college-26th-september-2015-by-ash-mills-edited-300x200.jpg",
                 alt: null
               }
             }]

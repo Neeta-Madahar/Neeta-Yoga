@@ -1,5 +1,5 @@
 <template>
-  <div class="floral-image">
+  <div class="floral-image" :class="isSmall ? 'floral-image--small' : ''">
     <img v-bind="imageAttributes" class="image">
     <img v-if="image && !isSmall" src="../assets/images/flower-power.svg" alt="" class="flowers">
     <img v-if="image && isSmall" src="../assets/images/flower-power-small.svg" alt="" class="flowers flowers--small">
@@ -31,8 +31,11 @@
     position: relative;
     text-align: center;
     padding: 45px;
-    max-width: 355px;
     margin: 0 auto;
+  }
+
+  .floral-image--small {
+    padding: 27px;
   }
 
   .image {
@@ -45,7 +48,6 @@
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    padding: 5px;
     height: 100%;
 
     @include sm {
@@ -53,5 +55,4 @@
       transform: translateX(0);
     }
   }
-
 </style>
