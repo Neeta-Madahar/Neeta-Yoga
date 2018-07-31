@@ -9,12 +9,12 @@
       <div class="col-xs-12 col-sm-6 image-half">
         <img v-bind="imageAttributes" class="image"/>
 
-        <blockquote>
-          <q>{{quote}}</q>
-          <footer>
+        <div class="quote">
+          <span class="quote-message">{{quote}}</span>
+          <div class="quote-footer">
             {{quoteBy}}
-          </footer>
-        </blockquote>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -63,27 +63,28 @@
     font-weight: 700;
   }
 
-  q {
-    margin: 20px 0;
-    display: inline-block;
 
-    @include sm {
-      margin: 0;
-    }
-  }
-
-  blockquote {
+  .quote {
     font-size: $font-size-body-mobile;
 
     @include sm {
       font-size: $font-size-body;
     }
+
+    &-message {
+      font-style: italic;
+      margin: 20px 0;
+      display: inline-block;
+
+      @include sm {
+        margin: 0;
+      }
+    }
+
+    &-footer {
+      color: $color-grey !important;
+      font-family: $font-raleway !important;
+    }
   }
 
-  footer {
-    color: $color-grey !important;
-    font-family: $font-raleway !important;
-
-
-  }
 </style>

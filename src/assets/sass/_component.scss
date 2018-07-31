@@ -77,7 +77,7 @@ $section-odd-color: $color-pink;
     font-family: $font-rubik-bold;
   }
 
-  #meditation q {
+  #meditation .quote-message {
     color: $section-even-color;
   }
 
@@ -151,7 +151,7 @@ $section-odd-color: $color-pink;
       color: $section-odd-color;
     }
 
-    #meditation q {
+    #meditation .quote-message {
       color: $section-odd-color;
     }
 
