@@ -98,10 +98,15 @@
     height: 100vh;
     background: linear-gradient(0deg, $color-orange, $color-pink);
     background-size: 400% 400%;
+    min-height: 409px;
 
     -webkit-animation: YogaHero 18s ease infinite;
     -moz-animation: YogaHero 18s ease infinite;
     animation: YogaHero 18s ease infinite;
+
+    @include sm {
+      min-height: 535px;
+    }
   }
 
   i {
