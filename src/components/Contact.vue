@@ -22,7 +22,7 @@
       buttonText: String,
     },
     beforeCreate: function() {
-      window.addEventListener('DOMContentLoaded', () => {
+      window.addEventListener('load', () => {
         this.popup = window.typeformEmbed.makePopup('https://neetamadahar.typeform.com/to/UOk2Z7', {
           mode: 'popup',
           hideHeaders: true,
