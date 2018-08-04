@@ -165,7 +165,7 @@ $section-odd-color: $color-pink;
 
     #resource,
     #videos,
-    #events{
+    #events {
       .item {
         justify-content: flex-start;
         flex-direction: column-reverse;
@@ -189,6 +189,10 @@ $section-odd-color: $color-pink;
       h3 {
         color: $section-odd-color;
       }
+    }
+
+    .list-entry-heading {
+      color: $section-odd-color;
     }
   }
 }
