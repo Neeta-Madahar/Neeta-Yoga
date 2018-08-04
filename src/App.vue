@@ -12,7 +12,7 @@
       <videos v-once v-if="component.slice_type === 'videos'" :title="component.data.title" :videos="component.items"/>
       <events v-once v-if="component.slice_type === 'events'" :title="component.data.title" :events="component.items"/>
       <movies v-once v-if="component.slice_type === 'movies'" :title="component.data.title" :movies="component.items" :image="component.data.backgroundImage" :text="component.data.text"/>
-      <contact v-once v-if="component.slice_type === 'contact'" :title="component.data.title" :text="component.data.text"/>
+      <contact v-once v-if="component.slice_type === 'contact'" :title="component.data.title" :text="component.data.text" :buttonText="component.data.buttonText"/>
     </div>
 
     <Footer/>
@@ -208,7 +208,8 @@
             slice_type: "contact",
             data: {
               title: "Contact",
-              text: "Get in touch with us here"
+              text: "Get in touch with us here",
+              buttonText: "Send me a message"
             }
           }
           ];

@@ -1,7 +1,7 @@
 import PrismicDom from 'prismic-dom';
 
 const richText = (text) => PrismicDom.RichText.asHtml(text);
-const plainText = (text) => text.length ? text[0].text : null;
+const plainText = (text = '') => text.length ? PrismicDom.RichText.asText(text) : null;
 const image = (image) => ({
   url: image.url,
   alt: image.alt
@@ -164,7 +164,8 @@ export const formatData =
           ...obj,
           data: {
             title: plainText(item.primary.title),
-            text: plainText(item.primary.text)
+            text: plainText(item.primary.text),
+            buttonText: plainText(item.primary.button_text)
           }
         };
         break;

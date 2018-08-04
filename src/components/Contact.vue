@@ -6,7 +6,7 @@
 
     <button @click="openPopup">
       <i class="icon-namaste" aria-hidden="true"></i>
-      Pop me a message
+      {{ buttonText }}
     </button>
   </div>
 </template>
@@ -19,6 +19,7 @@
     props: {
       title: String,
       text: String,
+      buttonText: String,
     },
     beforeCreate: function() {
       window.addEventListener('DOMContentLoaded', () => {
