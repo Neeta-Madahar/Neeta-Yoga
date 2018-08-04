@@ -6,7 +6,7 @@
       <list-entry :heading="video.title" :text="video.description" />
 
       <div class="video">
-        <iframe width="100%" :src="`https://www.youtube.com/embed/${video.youtube_id}`" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen />
+        <iframe width="100%" :src="video.video_url" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen />
       </div>
     </div>
   </div>

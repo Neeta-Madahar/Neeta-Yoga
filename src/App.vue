@@ -154,7 +154,7 @@
             data: {title: "Videos"},
             items: [{
               title: "This is a video",
-              youtube_id: "-B2lXzolNNE",
+              video_url: "https://embed.ted.com/talks/jill_bolte_taylor_s_powerful_stroke_of_insight",
               description: "A description about the video"
             }]
           }, {

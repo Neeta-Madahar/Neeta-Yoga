@@ -126,7 +126,7 @@ export const formatData =
           },
           items: item.items.map(video => ({
             title: plainText(video.title),
-            youtube_id: plainText(video.youtube_id),
+            video_url: plainText(video.video_url),
             description: plainText(video.description)
           }))
         };
