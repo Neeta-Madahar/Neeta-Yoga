@@ -12,7 +12,9 @@
 </template>
 
 <script>
+  import * as typeformEmbed from '@typeform/embed'
   import SectionTitle from "../common/SectionTitle";
+
   export default {
     components: {SectionTitle},
     name: 'contact',
@@ -21,13 +23,11 @@
       text: String,
       buttonText: String,
     },
-    beforeCreate: function() {
-      window.addEventListener('load', () => {
-        this.popup = window.typeformEmbed.makePopup('https://neetamadahar.typeform.com/to/UOk2Z7', {
-          mode: 'popup',
-          hideHeaders: true,
-          hideFooter: true
-        });
+    mounted () {
+      this.popup = typeformEmbed.makePopup('https://neetamadahar.typeform.com/to/UOk2Z7', {
+        mode: 'popup',
+        hideHeaders: true,
+        hideFooter: true
       });
     },
     methods: {
