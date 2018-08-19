@@ -21,6 +21,7 @@
 
 <script>
   import Prismic from 'prismic-javascript';
+
   import {formatData} from './utils/cmsHelpers';
   import Hero from './components/Hero.vue';
   import About from './components/About.vue';

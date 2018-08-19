@@ -44,7 +44,6 @@
           navigationNextLabel: "",
           navigationPrevLabel: "",
           perPageCustom: [[320, 1]],
-
         }
       }
     },
