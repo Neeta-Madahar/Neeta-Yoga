@@ -69,7 +69,7 @@
     @include sm {
       margin-left: 0;
       margin-right: 0;
-      flex: 1 0 250px;
+      flex: 0 1 250px;
     }
   }
 </style>

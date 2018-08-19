@@ -1,12 +1,12 @@
 <template>
-  <div id="articles">
+  <section id="articles">
     <h3>{{title}}</h3>
 
     <div v-for="(article, index) in articles" :key="`article-${index}`" class="item">
       <list-entry :heading="article.title" :text="article.description" :url="article.url"  />
     </div>
 
-  </div>
+  </section>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <div id="videos">
+  <section id="videos">
     <h3>{{title}}</h3>
 
     <div v-for="(video, index) in videos" :key="`video-${index}`" class="item">
@@ -9,7 +9,7 @@
         <iframe width="100%" :src="video.video_url" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen />
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -40,6 +40,8 @@
   }
 
   .video {
+    flex: 0 1 250px;
+    max-width: 250px;
     margin: 0 auto;
 
     @include sm {
@@ -53,10 +55,10 @@
     padding-top: 20px;
 
     @include sm {
+      padding-top: 0;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 0 40px;
     }
   }
 

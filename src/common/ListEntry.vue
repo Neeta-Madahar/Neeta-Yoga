@@ -4,7 +4,7 @@
       {{ heading }}
     </h4>
 
-    <a class="list-entry-heading" v-if="url" :href="url" target="_blank">
+    <a class="list-entry-heading" v-if="url" :href="url" target="_blank" rel="noopener noreferrer">
       {{ heading }}
     </a>
 
@@ -37,8 +37,12 @@
     margin-bottom: 5px;
     font-family: $font-rubik-bold;
     font-size: $font-size-s;
+  }
 
+  .text {
     @include sm {
+      flex-grow: 1;
+      padding: 0 40px 0 0;
       margin-bottom: 10px;
     }
   }

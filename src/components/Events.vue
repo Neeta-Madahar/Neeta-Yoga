@@ -1,5 +1,5 @@
 <template>
-  <div id="events">
+  <section id="events">
     <section-title :flower="5">{{ title }}</section-title>
 
     <div v-for="(event, index) in this.events" :key="`event-${index}`" class="item">
@@ -9,7 +9,7 @@
         <floral-image :image="event.image" :isSmall="true" />
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -62,7 +62,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 0 40px;
+      padding: 0 40px 0 0;
     }
   }
 
