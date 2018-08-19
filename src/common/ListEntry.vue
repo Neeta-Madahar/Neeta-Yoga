@@ -34,10 +34,17 @@
   }
 
   .list-entry-heading {
-
     margin: 0;
     font-family: $font-rubik-bold;
     font-size: $font-size-s;
+  }
+
+  a.list-entry-heading {
+    text-decoration: none;
+
+    @include hover-focus {
+      text-decoration: underline;
+    }
   }
 
 </style>

@@ -34,9 +34,10 @@ $section-odd-color: $color-pink;
 
   a {
     color: $section-even-color;
+    text-decoration: underline;
 
     @include hover-focus {
-      text-decoration: underline;
+      text-decoration: none;
     }
   }
 
