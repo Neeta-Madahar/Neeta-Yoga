@@ -44,6 +44,8 @@
           navigationNextLabel: "",
           navigationPrevLabel: "",
           perPageCustom: [[320, 1]],
+          autoplayTimeout: 3500,
+          loop: true
         }
       }
     },
