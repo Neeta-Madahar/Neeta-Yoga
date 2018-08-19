@@ -75,7 +75,7 @@
 
     &-message {
       font-style: italic;
-      margin: 20px 0;
+      margin-bottom: 20px;
       display: inline-block;
 
       @include sm {
