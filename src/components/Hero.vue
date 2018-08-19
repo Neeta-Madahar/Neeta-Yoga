@@ -165,7 +165,7 @@
       left: 0;
       padding: 0;
       width: 200px;
-      background: rgba($color-white, .8);
+      background: rgba($color-white, .3);
       margin-top: 10px;
 
       li {
