@@ -6,9 +6,9 @@ $breakpoint-sm: 690px;
 
 // Body
 
-$font-rubik: 'Rubik-Regular';
-$font-raleway: 'Raleway-Light';
-$font-rubik-bold: 'Rubik-Bold';
+$font-rubik: 'Rubik-Regular', Gadget, sans-serif;
+$font-raleway: 'Raleway-Light', sans-serif;
+$font-rubik-bold: 'Rubik-Bold', 'Arial black', Gadget, sans-serif;
 
 // Colours
 $color-orange: #FF9F1C;

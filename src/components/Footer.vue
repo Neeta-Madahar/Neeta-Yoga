@@ -2,10 +2,10 @@
   <footer class="footer">
     <div class="container">
       <div class="row">
-        <div class="col-sm-6 copyright">
+        <div class="col-xs">
           &copy; neetamadahar.com
         </div>
-        <div class="col-sm-6 footer--icon">
+        <div class="col-xs icons">
           <a href="https://www.instagram.com/neeta_madahar/">
             <i class="icon-instagram" aria-hidden="true"/>
           </a>
@@ -29,43 +29,50 @@
   .footer {
     background-color: $color-grey;
     color: $color-white;
-    padding: 10px 15px;
-
-    .copyright {
-      width: 100%;
-      margin-bottom: 5px;
-      text-align: center;
-      @include sm {
-        text-align: left;
-      }
-    }
-
-    a {
-      @include hover-focus {
-        i {
-          background-color: white;
-        }
-
-        i::before {
-          color: $color-pink;
-        }
-      }
-    }
-
-    i {
-      font-size: 25px;
-      padding: 10px;
-    }
+    font-size: 12px;
 
     @include sm {
-      &--icon {
-        text-align: right;
+      font-size: $font-size-s;
+    }
+  }
+
+  .icons {
+    text-align: right;
+  }
+
+  a {
+    display: inline-block;
+    font-size: 25px;
+    padding: 10px;
+    transition: background-color .3s ease;
+    vertical-align: middle;
+
+    i {
+      vertical-align: middle;
+
+      &::before {
+        transition: color .3s ease;
+      }
+
+    }
+
+    @include hover-focus {
+      outline: none;
+      background-color: white;
+
+      i::before {
+        color: $color-pink;
       }
     }
   }
 
   .row {
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .container {
+    padding: 0 15px;
   }
 
 </style>

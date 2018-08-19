@@ -2,27 +2,42 @@ $section-even-color: $color-orange;
 $section-odd-color: $color-pink;
 
 .component {
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   padding: 0 15px;
   text-align: center;
 
   @include sm {
+    margin-bottom: 100px;
     text-align: right;
   }
 
   &-background-image {
-    padding: 40px 15px;
+    padding-left: 15px;
+    padding-right: 15px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
 
     @include sm {
-      padding-left: 0;
-      padding-right: 0;
+      padding: 40px 0;
     }
 
     @include sm-down {
       background-image: none!important;
+    }
+  }
+
+  &-title.component {
+    margin-bottom: 0;
+
+    h2 {
+      border-bottom-color: $section-odd-color;
+
+      [class^="icon"] {
+        &:before {
+          color: $section-odd-color;
+        }
+      }
     }
   }
 
@@ -92,19 +107,30 @@ $section-odd-color: $color-pink;
 
   #resource,
   #videos,
-  #events {
+  #events,
+  #articles {
     .item {
       justify-content: flex-end;
       flex-direction: column-reverse;
+      margin-bottom: 50px;
 
       @include sm {
         flex-direction: row;
       }
     }
+
+    .text {
+      margin-bottom: 20px;
+
+      @include sm {
+        margin-bottom: 0;
+      }
+    }
   }
 
   .list-entry-heading {
-      color: $section-even-color;
+    color: $section-even-color;
+    margin-top: 0;
   }
 
 
@@ -112,6 +138,18 @@ $section-odd-color: $color-pink;
 
     @include sm {
       text-align: left;
+    }
+
+    .component-title.component {
+      h2 {
+        border-bottom-color: $section-even-color;
+
+        [class^="icon"] {
+          &:before {
+            color: $section-even-color;
+          }
+        }
+      }
     }
 
     .row {

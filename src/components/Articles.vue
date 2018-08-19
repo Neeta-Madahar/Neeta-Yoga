@@ -1,5 +1,7 @@
 <template>
-  <section id="articles">
+  <section id="resource">
+    <section-title :flower="2">Resources</section-title>
+
     <h3>{{title}}</h3>
 
     <div v-for="(article, index) in articles" :key="`article-${index}`" class="item">
@@ -11,10 +13,13 @@
 
 <script>
   import ListEntry from "../common/ListEntry";
+  import SectionTitle from "../common/SectionTitle.vue";
+
   export default {
     name: 'articles',
     components: {
       ListEntry,
+      SectionTitle
     },
     props: {
       title: String,
@@ -35,8 +40,8 @@
 <style lang="scss" scoped>
   @import "../assets/sass/variables";
 
-  .item {
-    margin: 20px 0;
+  .text {
+    padding: 0 !important;
   }
 
   a {

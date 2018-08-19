@@ -34,7 +34,7 @@
   }
 
   .list-entry-heading {
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     font-family: $font-rubik-bold;
     font-size: $font-size-s;
   }
@@ -49,5 +49,11 @@
 
   a.list-entry-heading {
     display: inline-block;
+    text-decoration: none;
+
+    @include hover-focus {
+      text-decoration: underline;
+      outline: none;
+    }
   }
 </style>

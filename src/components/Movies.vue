@@ -39,6 +39,10 @@
     @include sm {
       color: $color-white !important;
     }
+
+    &:focus {
+      outline: 2px solid $color-white;
+    }
   }
 
   p {

@@ -3,7 +3,7 @@
     <section-title :flower="3">{{ title }}</section-title>
 
     <div class="row">
-      <div class="col-sm-offset-6">
+      <div class="col-xs-12 col-sm-offset-6">
         <floral-image :image="image" />
       </div>
     </div>
@@ -60,6 +60,10 @@
 
 <style lang="scss" scoped>
   @import "../assets/sass/mixins";
+
+  #testimonials {
+    overflow: hidden;
+  }
 
   blockquote {
     margin: 0;

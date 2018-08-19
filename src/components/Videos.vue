@@ -40,14 +40,18 @@
   }
 
   .video {
-    flex: 0 1 250px;
     max-width: 250px;
     margin: 0 auto;
 
     @include sm {
-      flex: 0 0 267px;
-      max-width: 267px;
+      flex: 0 0 200px;
+      max-width: 200px;
       margin: 0;
+    }
+
+    @include md {
+      flex-basis: 250px;
+      max-width: 250px;
     }
   }
 

@@ -74,14 +74,10 @@
   }
 
   .lessons {
-    margin-bottom: 50px;
+    margin-bottom: 25px;
 
     &:last-child {
       margin-bottom: 25px;
-    }
-
-    @include sm {
-      margin-bottom: 30px;
     }
   }
 
@@ -102,9 +98,14 @@
   .location {
     color: $color-pink;
     font-size: $font-size-body-mobile;
+    text-decoration: none;
 
     @include sm {
       font-size: $font-size-body
+    }
+
+    @include hover-focus {
+      text-decoration: underline;
     }
   }
 

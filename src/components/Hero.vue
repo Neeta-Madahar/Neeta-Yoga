@@ -29,7 +29,7 @@
     </nav>
 
     <div class="container">
-      <h1><img class="logo " src="../assets/images/logo-neeta.svg" alt=""></h1>
+      <h1><img class="logo " src="../assets/images/logo-neeta.svg" alt="Neeta Madahar"></h1>
       <span class="caption">Yoga & <br>Meditation <br>Teacher</span>
     </div>
 
@@ -208,6 +208,8 @@
     }
 
     &.active {
+      position: fixed;
+
       .close-icon {
         display: block;
       }
@@ -264,7 +266,6 @@
   .mobile-navigation {
     position: fixed;
     top: 0;
-    left: 100%;
     width: 100%;
     height: 100%;
     z-index: 5;
@@ -272,12 +273,13 @@
     background: linear-gradient(0deg, $color-orange, $color-pink);
     background-size: 400% 400%;
     opacity: 0;
+    visibility: hidden;
 
     -webkit-animation: YogaHero 18s ease infinite;
     -moz-animation: YogaHero 18s ease infinite;
     animation: YogaHero 18s ease infinite;
 
-    transition: opacity .3s ease;
+    transition: opacity .3s ease, visibility 0s linear .3s;
 
     &-link {
       padding: 10px;
@@ -289,7 +291,10 @@
 
     &.active {
       opacity: 1;
-      left: 0;
+      visibility: visible;
+      -webkit-transition-delay: 0s;
+      transition-delay: 0s;
+
 
       .mobile-navigation-link,
       .link-4 {

@@ -1,8 +1,6 @@
 <template>
-  <div id="resource">
-    <section-title :flower="2">{{ title }}</section-title>
-
-    <h3>Web links</h3>
+  <section id="articles">
+    <h3>{{ title }}</h3>
 
     <div :href="link.url" v-for="(link, index) in links" :key="`resource-${index}`" class="item">
       <list-entry :heading="link.title" :text="link.description" :url="link.url" />
@@ -11,7 +9,7 @@
         <img :src="link.image.url" :alt="link.image.alt">
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -52,7 +50,7 @@
 
   .item {
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
   }
 
   .text {
@@ -69,7 +67,17 @@
     @include sm {
       margin-left: 0;
       margin-right: 0;
-      flex: 0 1 250px;
+      flex: 0 0 200px;
+      max-width: 200px;
+    }
+
+    @include md {
+      flex-basis: 250px;
+      max-width: 250px;
+    }
+
+    img {
+      max-width: 100%;
     }
   }
 </style>

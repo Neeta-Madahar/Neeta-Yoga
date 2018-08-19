@@ -2,7 +2,18 @@
   <div id='app'>
     <Hero :menuOpen="menuOpen" :toggle="toggleMenu"/>
 
-    <div v-for="component in data" :key="component.slice_type" :class="(component.data && component.data.backgroundImage) ? 'component component-background-image' : 'container component'" :style="{ backgroundImage: (component.data && component.data.backgroundImage) ? `url('${component.data.backgroundImage.url}')` : null }">
+    <div
+      v-for="component in data"
+      :key="component.slice_type"
+      class="component"
+      :class="{
+        'component-background-image': component.data && component.data.backgroundImage,
+        container: component.data && !component.data.backgroundImage
+      }"
+      :style="{
+        backgroundImage: component.data && component.data.backgroundImage ? `url('${component.data.backgroundImage.url}')` : null
+      }"
+    >
       <about v-once v-if="component.slice_type === 'about_section'" :title="component.data.title" :text="component.data.text" :image="component.data.image"/>
       <yoga v-once v-if="component.slice_type === 'yoga'" :privateText="component.data.privateText" :lessons="component.items" :title="component.data.title"/>
       <testimonials v-once v-if="component.slice_type === 'testimonials'" :title="component.data.title" :image="component.data.image" :testimonials="component.items"/>
@@ -54,7 +65,7 @@
     },
     data: () => ({
       data: null,
-      menuOpen: false
+      menuOpen: false,
     }),
     methods: {
       getContent () {

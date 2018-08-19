@@ -51,6 +51,7 @@
     @include hover-focus {
       color: $color-white;
       background-color: $color-pink;
+      outline: none;
 
       .icon-namaste {
         color: currentColor;

@@ -6,7 +6,7 @@ const image = (image) => ({
   url: image.url,
   alt: image.alt
 });
-const linkObj = (link) => {
+const linkObj = (link = {}) => {
   if (!link.url && !link.slug) return null;
 
   if (link.link_type === 'Web') {
@@ -78,6 +78,14 @@ export const formatData =
     let obj = { slice_type: item.slice_type };
 
     switch(item.slice_type) {
+      case 'title_section':
+        obj = {
+          ...obj,
+          data: {
+            title: plainText(item.primary.title_text)
+          }
+        };
+        break;
       case 'about_section':
         obj = {
           ...obj,

@@ -53,6 +53,11 @@
 
   .image-half {
     text-align: center;
+    margin-bottom: 25px;
+
+    @include sm {
+      margin-bottom: 0;
+    }
   }
 
   .row {

@@ -1,6 +1,6 @@
 
 @font-face {
-    font-family: $font-rubik-bold;
+    font-family: 'Rubik-Bold';
     src: url('./fonts/rubik-bold-webfont.woff2') format('woff2'),
          url('./fonts/rubik-bold-webfont.woff') format('woff');
     font-weight: normal;
@@ -10,7 +10,7 @@
 
 
 @font-face {
-    font-family: $font-raleway;
+    font-family: 'Raleway-Light';
     src: url('./fonts/raleway-light-webfont.woff2') format('woff2'),
          url('./fonts/raleway-light-webfont.woff') format('woff');
     font-weight: normal;
@@ -20,7 +20,7 @@
 
 
 @font-face {
-    font-family: $font-rubik;
+    font-family: 'Rubik-Regular';
     src: url('./fonts/rubik-regular-webfont.woff2') format('woff2'),
          url('./fonts/rubik-regular-webfont.woff') format('woff');
     font-weight: normal;
