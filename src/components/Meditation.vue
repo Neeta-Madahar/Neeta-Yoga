@@ -1,5 +1,5 @@
 <template>
-  <div id="meditation">
+  <section id="meditation">
     <section-title :flower="4">{{ title }}</section-title>
 
     <div class="row">
@@ -7,17 +7,19 @@
         <div v-html="text" />
       </div>
       <div class="col-xs-12 col-sm-6 image-half">
-        <img v-bind="imageAttributes" class="image"/>
+        <figure>
+          <img v-bind="imageAttributes" class="image"/>
 
-        <div class="quote">
-          <span class="quote-message">{{quote}}</span>
-          <div class="quote-footer">
-            {{quoteBy}}
-          </div>
-        </div>
+          <figcaption class="quote">
+            <span class="quote-message">{{quote}}</span>
+            <div class="quote-footer">
+              {{quoteBy}}
+            </div>
+          </figcaption>
+        </figure>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -85,6 +87,11 @@
       color: $color-grey !important;
       font-family: $font-raleway !important;
     }
+  }
+
+  figure {
+    max-width: 201px;
+    margin: 0 auto;
   }
 
 </style>
