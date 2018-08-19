@@ -1,5 +1,5 @@
 <template>
-  <div id="yoga">
+  <section id="yoga">
     <section-title :flower="2">{{ title }}</section-title>
 
     <h3>Public</h3>
@@ -14,7 +14,12 @@
 
             <strong class="lesson-time">{{ lesson.time }}</strong>
 
-            <div class="location">
+            <div v-if="lesson.location_link">
+              <a class="location" :href="lesson.location_link.url" :target="lesson.location_link.target" :rel="lesson.location_link.rel">
+                {{ lesson.location }}
+              </a>
+            </div>
+            <div class="location" v-else>
               {{ lesson.location }}
             </div>
           </div>
@@ -25,7 +30,7 @@
     <h3>Private</h3>
 
     <div v-html="privateText" class="private"></div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -97,6 +102,7 @@
   .location {
     color: $color-pink;
     font-size: $font-size-body-mobile;
+
     @include sm {
       font-size: $font-size-body
     }
