@@ -1,5 +1,5 @@
 <template>
-  <div class="text">
+  <section class="text">
     <h4 class="list-entry-heading" v-if="!url">
       {{ heading }}
     </h4>
@@ -11,7 +11,7 @@
     <p>
       {{ text }}
     </p>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -34,17 +34,16 @@
   }
 
   .list-entry-heading {
-    margin: 0;
+    margin-bottom: 5px;
     font-family: $font-rubik-bold;
     font-size: $font-size-s;
-  }
 
-  a.list-entry-heading {
-    text-decoration: none;
-
-    @include hover-focus {
-      text-decoration: underline;
+    @include sm {
+      margin-bottom: 10px;
     }
   }
 
+  a.list-entry-heading {
+    display: inline-block;
+  }
 </style>
