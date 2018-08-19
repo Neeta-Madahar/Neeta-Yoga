@@ -143,15 +143,15 @@ button::-moz-focus-inner {
   }
 
   &-navigation-prev:before {
-    content: "\e905";
-    transform: rotate(90deg);
+    content: "\e902";
+    transform: rotate(180deg);
     color: $color-grey;
     opacity: 1;
   }
 
   &-navigation-next:before {
-    content: "\e905";
-    transform: rotate(-90deg);
+    content: "\e902";
+    transform: rotate(0deg);
     color: $color-grey;
   }
 

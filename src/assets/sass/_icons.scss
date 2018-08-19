@@ -34,15 +34,16 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-chevron:before {
+.icon-facebook:before {
   content: "\e900";
-  color: white;
+  color: #fff;
+}
+.icon-instagram:before {
+  content: "\e905";
+  color: #fff;
 }
 .icon-burger2:before {
   content: "\e904";
-}
-.icon-chevron_down:before {
-  content: "\e905";
 }
 .icon-close2:before {
   content: "\e906";
@@ -68,10 +69,19 @@
 .icon-quote:before {
   content: "\e90d";
 }
+.icon-burger:before {
+  content: "\e901";
+}
+.icon-chevron:before {
+  content: "\e902";
+}
+.icon-close:before {
+  content: "\e903";
+}
 .icon-facebook2:before {
   content: "\ea91";
 }
-.icon-instagram:before {
+.icon-instagram2:before {
   content: "\ea92";
 }
 .icon-twitter:before {
@@ -79,4 +89,7 @@
 }
 .icon-youtube2:before {
   content: "\ea9e";
+}
+.icon-pinterest:before {
+  content: "\ead1";
 }
