@@ -94,7 +94,10 @@
               lessons: [{
                 lesson: "Gentle Yoga",
                 time: "11:15-12:45pm",
-                location: "Deanwood Park Golf Course, Stockcross"
+                location: "Deanwood Park Golf Course, Stockcross",
+                location_link: {
+                  url:'#',
+                },
               }, {
                 lesson: "Gentle Yoga",
                 time: "11:15-12:45pm",

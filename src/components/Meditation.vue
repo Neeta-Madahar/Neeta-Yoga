@@ -84,7 +84,7 @@
       display: inline-block;
 
       @include sm {
-        margin: 0;
+        margin-bottom: 10px;
       }
     }
 

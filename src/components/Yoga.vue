@@ -96,13 +96,17 @@
   }
 
   .location {
-    color: $color-pink;
     font-size: $font-size-body-mobile;
-    text-decoration: none;
 
     @include sm {
       font-size: $font-size-body
     }
+
+  }
+
+  a.location {
+    text-decoration: none;
+    display: inline-block;
 
     @include hover-focus {
       text-decoration: underline;

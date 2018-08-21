@@ -179,7 +179,7 @@ export const formatData =
           },
           items: item.items.map(event => ({
             title: plainText(event.title),
-            description: plainText(event.description),
+            description: richText(event.description),
             image: image(event.image)
           }))
         };

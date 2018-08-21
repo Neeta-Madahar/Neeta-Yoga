@@ -7,7 +7,7 @@
     <p>{{ text }}</p>
 
     <div v-for="(movie, index) in movies" :key="`movie-${index}`" class="item">
-      <a :href="movie.url" target="_blank">{{movie.title}}</a> ({{movie.year}})
+      <a :href="movie.url" target="_blank" rel="noopener">{{movie.title}}</a> ({{movie.year}})
     </div>
   </div>
 </template>
