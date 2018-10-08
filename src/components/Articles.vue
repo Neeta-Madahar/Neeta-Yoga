@@ -7,7 +7,6 @@
     <div v-for="(article, index) in articles" :key="`article-${index}`" class="item">
       <list-entry :heading="article.title" :text="article.description" :url="article.url"  />
     </div>
-
   </section>
 </template>
 
@@ -42,6 +41,10 @@
 
   .text {
     padding: 0 !important;
+  }
+
+  .item {
+    display: flex;
   }
 
   a {

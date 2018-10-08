@@ -179,6 +179,7 @@ export const formatData =
           },
           items: item.items.map(event => ({
             title: plainText(event.title),
+            time: plainText(event.time),
             description: richText(event.description),
             image: image(event.image)
           }))

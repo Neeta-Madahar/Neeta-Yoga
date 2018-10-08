@@ -27,7 +27,6 @@
   import FloralImage from '../common/FloralImage.vue';
   import SectionTitle from '../common/SectionTitle.vue';
 
-
   export default {
     name: 'testimonials',
     props: {
@@ -44,7 +43,7 @@
           navigationNextLabel: "",
           navigationPrevLabel: "",
           perPageCustom: [[320, 1]],
-          autoplayTimeout: 3500,
+          autoplayTimeout: 8000,
           loop: true
         }
       }

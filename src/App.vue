@@ -21,7 +21,7 @@
       <resources v-once v-if="component.slice_type === 'resource'" :title="component.data.title" :links="component.items"/>
       <articles v-once v-if="component.slice_type === 'articles'" :title="component.data.title" :articles="component.items"/>
       <videos v-once v-if="component.slice_type === 'videos'" :title="component.data.title" :videos="component.items"/>
-      <events v-once v-if="component.slice_type === 'events'" :title="component.data.title" :events="component.items"/>
+      <events v-once v-if="component.slice_type === 'events'" :title="component.data.title" :events="component.items" />
       <movies v-once v-if="component.slice_type === 'movies'" :title="component.data.title" :movies="component.items" :image="component.data.backgroundImage" :text="component.data.text"/>
       <contact v-once v-if="component.slice_type === 'contact'" :title="component.data.title" :text="component.data.text" :buttonText="component.data.buttonText"/>
     </div>
@@ -69,7 +69,7 @@
     }),
     methods: {
       getContent () {
-        if (process.env.NODE_ENV === 'development') {
+        if (process.env.NODE_ENV === 'developument') {
           this.data = [{
             slice_type: "about_section",
             data: {
@@ -231,7 +231,7 @@
         } else {
           const API_ENDPOINT = 'https://art-and-yoga.cdn.prismic.io/api/v2';
           Prismic.api(API_ENDPOINT)
-            .then(api => api.getByUID('yoga', 'yoga'))
+            .then(api => api.getByUID('page', 'yoga'))
             .then(response => this.data = formatData(response.data.body));
         }
       },

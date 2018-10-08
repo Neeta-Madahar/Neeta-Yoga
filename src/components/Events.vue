@@ -3,7 +3,7 @@
     <section-title :flower="5">{{ title }}</section-title>
 
     <div v-for="(event, index) in this.events" :key="`event-${index}`" class="item">
-      <list-entry :heading="event.title" :text="event.description" />
+      <list-entry :heading="event.title" :text="event.description" :subHeading="event.time" />
 
       <div class="image">
         <floral-image :image="event.image" :isSmall="true" />
@@ -56,8 +56,6 @@
   }
 
   .text {
-    font-size: $font-size-body-mobile;
-
     @include sm {
       display: flex;
       flex-direction: column;
@@ -78,7 +76,7 @@
     }
   }
 
-  .image {
+  img {
     display: none;
 
     @include sm {

@@ -40,18 +40,21 @@
   }
 
   .video {
-    max-width: 250px;
+    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
+    height: 200px;
 
     @include sm {
       flex: 0 0 200px;
       max-width: 200px;
       margin: 0;
+      height: auto;
     }
 
     @include md {
-      flex-basis: 250px;
-      max-width: 250px;
+      flex-basis: 300px;
+      max-width: 300px;
     }
   }
 
@@ -72,5 +75,9 @@
 
   iframe {
     max-width: 100%;
+
+    @media all and (max-width: $breakpoint-sm - 1) {
+      height: 100%;
+    }
   }
 </style>

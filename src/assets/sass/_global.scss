@@ -165,24 +165,21 @@ button::-moz-focus-inner {
     @include sm {
       padding-top: 50px;
     }
+  }
 
-    &:before, &:after {
-      font-family: 'icomoon';
-      content: "\e90d";
-      position: absolute;
-      top: 0;
-      left: 0;
-      font-size: 34px;
-      display: none;
+  q {
+    position: relative;
+  }
 
-      @include sm {
-        display: block;
-      }
-    }
+  q:before,
+  q:after {
+    font-size: 50px;
+    line-height: 1;
+  }
 
-    &:after {
-      left: 30px;
-    }
+  q:after {
+    position: absolute;
+    top: 0;
   }
 
   &-slide {

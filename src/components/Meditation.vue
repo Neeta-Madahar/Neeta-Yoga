@@ -70,9 +70,15 @@
     font-weight: 700;
   }
 
+  .image {
+    margin-bottom: 5px;
+  }
+
 
   .quote {
     font-size: $font-size-body-mobile;
+    max-width: 250px;
+    margin: 0 auto;
 
     @include sm {
       font-size: $font-size-body;
@@ -80,7 +86,7 @@
 
     &-message {
       font-style: italic;
-      margin-bottom: 20px;
+      margin-bottom: 5px;
       display: inline-block;
 
       @include sm {
@@ -95,7 +101,6 @@
   }
 
   figure {
-    max-width: 201px;
     margin: 0 auto;
   }
 

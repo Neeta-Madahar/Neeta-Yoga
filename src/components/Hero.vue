@@ -29,7 +29,7 @@
     </nav>
 
     <div class="container">
-      <h1><img class="logo " src="../assets/images/logo-neeta.svg" alt="Neeta Madahar"></h1>
+      <h1><img class="logo" src="../assets/images/logo-neeta.svg" alt="Neeta Madahar"></h1>
       <span class="caption">Yoga & <br>Meditation <br>Teacher</span>
     </div>
 
@@ -223,6 +223,8 @@
   .logo {
     margin: 0 auto;
     height: 140px;
+
+
     @include sm {
       height: 240px;
       margin-right: 30px;
