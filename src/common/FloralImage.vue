@@ -30,7 +30,7 @@
   .floral-image {
     position: relative;
     text-align: center;
-    padding: 45px;
+    padding: 10%;
     margin: 0 auto;
   }
 
@@ -39,6 +39,7 @@
   }
 
   img {
+    width: 100%;
     border-radius: 50%;
   }
 
