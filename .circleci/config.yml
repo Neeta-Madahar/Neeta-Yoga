@@ -19,11 +19,11 @@ jobs:
 
       - run:
           name: AWS Sync to Yoga
-          command: aws --region eu-west-1 s3 sync ./build s3://neetamadahar.com/yoga/ --acl public-read --exact-timestamps --delete || return 1
+          command: aws --region eu-west-1 s3 sync ./build s3://neetamadahar.com/yoga/ --exact-timestamps --delete || return 1
           
       - run:
           name: AWS Sync to main site
-          command: aws --region us-east-2 s3 sync ./build s3://neetamadahar-yoga.com/ --acl public-read --exact-timestamps --delete || return 1
+          command: aws --region us-east-2 s3 sync ./build s3://neetamadahar-yoga.com/ --exact-timestamps --delete || return 1
 
 
   build:
