@@ -2,6 +2,8 @@
   <div id='app'>
     <Hero :menuOpen="menuOpen" :toggle="toggleMenu"/>
 
+    <div v-if="error" class="component">{{error}}</div>
+
     <div
       v-for="component in data"
       :key="component.slice_type"
@@ -32,8 +34,9 @@
 
 <script>
   import Prismic from 'prismic-javascript';
+  import { API_ENDPOINT } from '@/config/constants';
+  import {formatData} from '@/utils/FormatData';
 
-  import {formatData} from './utils/cmsHelpers';
   import Hero from './components/Hero.vue';
   import About from './components/About.vue';
   import Yoga from './components/Yoga.vue';
@@ -66,10 +69,11 @@
     data: () => ({
       data: null,
       menuOpen: false,
+      error: null,
     }),
     methods: {
       getContent () {
-        if (process.env.NODE_ENV === 'developument') {
+        if (process.env.NODE_ENV === 'development') {
           this.data = [{
             slice_type: "about_section",
             data: {
@@ -229,10 +233,10 @@
           }
           ];
         } else {
-          const API_ENDPOINT = 'https://art-and-yoga.cdn.prismic.io/api/v2';
           Prismic.api(API_ENDPOINT)
             .then(api => api.getByUID('page', 'yoga'))
-            .then(response => this.data = formatData(response.data.body));
+            .then(response => this.data = formatData(response.data.body))
+            .catch(e => this.error = `Apologies, there was a ${e.status} error getting data from the CMS.`);
         }
       },
       toggleMenu: function(e, isScroll = false) {

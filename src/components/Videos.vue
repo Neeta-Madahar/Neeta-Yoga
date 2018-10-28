@@ -13,7 +13,8 @@
 </template>
 
 <script>
-  import ListEntry from '../common/ListEntry';
+  import ListEntry from '@/common/ListEntry';
+
   export default {
     name: 'videos',
     components: {

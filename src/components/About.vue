@@ -13,8 +13,8 @@
 </template>
 
 <script>
-  import FloralImage from '../common/FloralImage.vue';
-  import SectionTitle from '../common/SectionTitle.vue';
+  import FloralImage from '@/common/FloralImage.vue';
+  import SectionTitle from '@/common/SectionTitle.vue';
 
   export default {
     name: 'about',

@@ -13,7 +13,7 @@
 </template>
 
 <script>
-  import SectionTitle from "../common/SectionTitle";
+  import SectionTitle from "@/common/SectionTitle";
   export default {
     components: {SectionTitle},
     name: 'movies',

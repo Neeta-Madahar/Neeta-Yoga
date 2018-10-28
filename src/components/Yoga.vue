@@ -6,7 +6,7 @@
 
     <div>
       <div v-for="(day, index) in lessons" :key="`day-${index}`" class="lessons">
-        <h4>{{ day.day.charAt(0).toUpperCase() + day.day.slice(1)}}</h4>
+        <h4>{{ setDay(day.day) }}</h4>
 
         <div class="lesson-info">
           <div v-for="(lesson, index) in day.lessons" :key="`lesson-${index}`" class="lesson">
@@ -34,7 +34,8 @@
 </template>
 
 <script>
-  import SectionTitle from "../common/SectionTitle";
+  import SectionTitle from "@/common/SectionTitle";
+
   export default {
     components: {SectionTitle},
     name: 'yoga',
@@ -42,6 +43,11 @@
       privateText: String,
       lessons: Array,
       title: String,
+    },
+    methods: {
+      setDay(day) {
+        return day.charAt(0).toUpperCase() + day.slice(1);
+      }
     }
   }
 </script>

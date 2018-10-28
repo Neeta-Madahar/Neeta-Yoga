@@ -11,8 +11,8 @@
 </template>
 
 <script>
-  import ListEntry from "../common/ListEntry";
-  import SectionTitle from "../common/SectionTitle.vue";
+  import ListEntry from "@/common/ListEntry";
+  import SectionTitle from "@/common/SectionTitle.vue";
 
   export default {
     name: 'articles',

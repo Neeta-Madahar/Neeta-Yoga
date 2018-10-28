@@ -13,7 +13,7 @@
 
 <script>
   import * as typeformEmbed from '@typeform/embed'
-  import SectionTitle from "../common/SectionTitle";
+  import SectionTitle from "@/common/SectionTitle";
 
   export default {
     components: {SectionTitle},

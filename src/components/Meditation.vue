@@ -23,7 +23,7 @@
 </template>
 
 <script>
-  import SectionTitle from '../common/SectionTitle.vue';
+  import SectionTitle from '@/common/SectionTitle.vue';
 
   export default {
     name: 'meditation',

@@ -11,8 +11,8 @@
 <script>
   import Articles from './Articles.vue';
   import Videos from './Videos.vue';
-  import SectionTitle from '../common/SectionTitle.vue';
-  import ListEntry from "../common/ListEntry";
+  import SectionTitle from '@/common/SectionTitle.vue';
+  import ListEntry from "@/common/ListEntry";
 
   export default {
     name: 'resource',

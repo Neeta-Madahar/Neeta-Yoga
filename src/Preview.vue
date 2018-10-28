@@ -8,6 +8,7 @@
   import Prismic from 'prismic-javascript';
   import Cookies from 'js-cookie';
   import qs from 'qs';
+  import { API_ENDPOINT } from '@/config/constants';
 
   const PREVIEW_EXPIRES = 1/48; // 30 minutes
   const linkResolver = doc => doc.type === 'page' ? doc.uid : '/';
@@ -15,7 +16,6 @@
   export default {
     name: 'preview',
     beforeCreate () {
-      const API_ENDPOINT = 'https://art-and-yoga.cdn.prismic.io/api/v2';
       const params = qs.parse(window.location.search.slice(1));
 
       Prismic.api(API_ENDPOINT)

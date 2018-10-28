@@ -13,9 +13,9 @@
 </template>
 
 <script>
-  import FloralImage from "../common/FloralImage";
-  import SectionTitle from "../common/SectionTitle";
-  import ListEntry from "../common/ListEntry";
+  import FloralImage from "@/common/FloralImage";
+  import SectionTitle from "@/common/SectionTitle";
+  import ListEntry from "@/common/ListEntry";
 
   export default {
     components: {
