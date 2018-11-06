@@ -26,7 +26,7 @@ new Vue({
 }).$mount('#app');
 
 Vue.use(VueAnalytics, {
-  id: 'UA-123353348-2',
+  id: ['UA-128847986-1', 'UA-128847986-2'],
   debug: {
     sendHitTask: process.env.NODE_ENV === 'production'
   }
