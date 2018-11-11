@@ -27,4 +27,4 @@ npm start
 
 ## Deployment
 
-The site will deploy automatically using CircleCI when the master branch is tagged with a version number such as `0.0.1`.
+The site will deploy automatically using CircleCI when the master branch is tagged with a version number such as `v0.0.1`.
