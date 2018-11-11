@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-xs">
-          &copy;{{ new Date().getFullYear() }} neetamadahar.com | Website by <a href="https://jupiterandthegiraffe.com"/>Jupiter and the Giraffe</a>
+          &copy; {{ new Date().getFullYear() }} neetamadahar.com | Website by <a href="https://jupiterandthegiraffe.com"/>Jupiter and the Giraffe</a>
         </div>
         <div class="col-xs icons">
           <a href="https://www.instagram.com/neeta_madahar/">
