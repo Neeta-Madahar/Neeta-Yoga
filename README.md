@@ -14,7 +14,7 @@ The project is served on an S3 bucket and acts as an independent site (yoga site
 ## Install dependencies
 
 ```
-npm start
+yarn start
 ```
 
 ## Startup
@@ -22,7 +22,7 @@ npm start
 To startup the project run...
 
 ```
-npm start
+yarn start
 ```
 
 ## Deployment
