@@ -19,6 +19,7 @@ new Vue({
   },
   computed: {
     ViewComponent () {
+      this.$ga.page(this.currentRoute);
       return routes[this.currentRoute] || App;
     }
   },
