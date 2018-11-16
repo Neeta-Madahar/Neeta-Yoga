@@ -6,10 +6,10 @@
           &copy; {{ new Date().getFullYear() }} neetamadahar.com | Website by <a href="https://jupiterandthegiraffe.com">Jupiter and the Giraffe</a>
         </div>
         <div class="col-xs icons">
-          <a href="https://www.instagram.com/neeta_madahar/">
+          <a href="https://www.instagram.com/neeta_madahar/" class="footer__icon-link">
             <i class="icon-instagram" aria-hidden="true"/>
           </a>
-          <a href="https://www.facebook.com/neetasyogacafe/?hc_ref=ARS2ebRiKpFRkPntla-Hf1r3dScX7xKJPGUgF2npftaufRZ5jdnVScWWNTZy3EeoQ1I">
+          <a href="https://www.facebook.com/neetasyogacafe/?hc_ref=ARS2ebRiKpFRkPntla-Hf1r3dScX7xKJPGUgF2npftaufRZ5jdnVScWWNTZy3EeoQ1I" class="footer__icon-link">
             <i class="icon-facebook" aria-hidden="true"/>
           </a>
         </div>
@@ -34,35 +34,47 @@
     @include sm {
       font-size: $font-size-s;
     }
+
+    &__icon-link {
+      font-size: 25px;
+      padding: 10px;
+      transition: background-color .3s ease;
+      vertical-align: middle;
+
+      i {
+        vertical-align: middle;
+
+        &::before {
+          transition: color .3s ease;
+        }
+
+      }
+
+      @include hover-focus {
+        outline: none;
+        background-color: white;
+        text-decoration: none;
+
+        i::before {
+          color: $color-pink;
+        }
+      }
+    }
   }
 
   .icons {
     text-align: right;
   }
 
+
   a {
     display: inline-block;
-    font-size: 25px;
-    padding: 10px;
-    transition: background-color .3s ease;
-    vertical-align: middle;
-
-    i {
-      vertical-align: middle;
-
-      &::before {
-        transition: color .3s ease;
-      }
-
-    }
+    color: $color-white;
+    transition: color .3s ease;
 
     @include hover-focus {
-      outline: none;
-      background-color: white;
-
-      i::before {
-        color: $color-pink;
-      }
+      text-decoration: underline;
+      color: $color-orange;
     }
   }
 

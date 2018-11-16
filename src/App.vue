@@ -236,7 +236,7 @@
           Prismic.api(API_ENDPOINT)
             .then(api => api.getByUID('page', 'yoga'))
             .then(response => this.data = formatData(response.data.body))
-            .catch(e => this.error = `Apologies, there was a ${e.status} error getting data from the CMS.`);
+            .catch(e => this.error = `Apologies, there was a ${e} error getting data from the CMS.`);
         }
       },
       toggleMenu: function(e, isScroll = false) {

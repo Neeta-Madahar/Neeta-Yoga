@@ -70,7 +70,6 @@ export const formatData =
             title: plainText(resource.title),
             url: plainText(resource.url),
             description: plainText(resource.description),
-            image: image(resource.image)
           })),
           data: {
             title: plainText(item.primary.title)

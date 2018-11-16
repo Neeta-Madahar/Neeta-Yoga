@@ -2,10 +2,12 @@ import PrismicDom from 'prismic-dom';
 
 export const richText = (text) => PrismicDom.RichText.asHtml(text);
 export const plainText = (text = '') => text.length ? PrismicDom.RichText.asText(text) : null;
-export const image = (image) => ({
-  url: image.url,
-  alt: image.alt
-});
+export const image = (image) => {
+  return {
+    url: image.url,
+    alt: image.alt
+  }
+};
 
 const linkObj = (link = {}) => {
   if (!link.url && !link.slug) return null;
