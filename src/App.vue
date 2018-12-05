@@ -28,6 +28,8 @@
       <contact v-once v-if="component.slice_type === 'contact'" :title="component.data.title" :text="component.data.text" :buttonText="component.data.buttonText"/>
     </div>
 
+    <cookie-notice v-if="!this.cookieSeen" :onClickHandler="this.closeCookie" />
+
     <Footer/>
   </div>
 </template>
@@ -49,10 +51,12 @@
   import Movies from './components/Movies.vue';
   import Contact from './components/Contact.vue';
   import Footer from './components/Footer.vue';
+  import CookieNotice from "./components/CookieNotice";
 
   export default {
     name: 'app',
     components: {
+      CookieNotice,
       Hero,
       About,
       Yoga,
@@ -70,6 +74,7 @@
       data: null,
       menuOpen: false,
       error: null,
+      cookieSeen: false,
     }),
     methods: {
       getContent () {
@@ -247,10 +252,24 @@
             return;
         }
         document.body.classList.remove('menu-open');
+      },
+      closeCookie: function() {
+        this.setCookie('notice-seen', 'yes', 999);
+        this.cookieSeen = true;
+      },
+      getCookie: function (name) {
+        var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+        return v ? v[2] : null;
+      },
+      setCookie: function (name, value, days) {
+        var d = new Date;
+        d.setTime(d.getTime() + 24*60*60*1000*days);
+        document.cookie = name + "=" + value + ";path=/;expires=" + d.toGMTString();
       }
     },
     beforeMount () {
       this.getContent();
+      this.cookieSeen = !!this.getCookie('notice-seen');
     }
   }
 </script>
