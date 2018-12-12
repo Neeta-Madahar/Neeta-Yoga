@@ -1,6 +1,23 @@
 import PrismicDom from 'prismic-dom';
 
-export const richText = (text) => PrismicDom.RichText.asHtml(text);
+const linkResolver = (doc) => {
+  return doc;
+}
+
+const htmlSerializer = (type, element, content) => {
+  const hostName = RegExp(window.location.hostname);
+  switch (type) {
+    case 'hyperlink':
+      if (element.data.link_type === 'Web' && /#/.test(element.data.url) && hostName.test(element.data.url)) {
+        return `<a href="#${element.data.url.split('#')[1]}">${content}</a>`;
+      }
+      break;
+    default:
+      return null;
+  }
+}
+
+export const richText = (text) => PrismicDom.RichText.asHtml(text, linkResolver, htmlSerializer);
 export const plainText = (text = '') => text.length ? PrismicDom.RichText.asText(text) : null;
 export const image = (image) => {
   return {
