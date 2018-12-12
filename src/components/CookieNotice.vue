@@ -3,7 +3,7 @@
     <div class="container">
       <p>
         This website uses cookies.
-        By continuing to use this website you are agreeing to our
+        By continuing to use this website you are agreeing to my
         <a href="https://neetamadahar.com/privacy-policy">Privacy Policy</a>.
       </p>
 
