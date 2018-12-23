@@ -189,6 +189,7 @@
 
   .close-icon {
     display: none;
+    font-size: $font-size-s;
   }
 
   .nav-button {
@@ -212,6 +213,9 @@
 
       .close-icon {
         display: block;
+        &::before {
+          font-size: $font-size-s;
+        }
       }
 
       .open-icon {
@@ -223,7 +227,6 @@
   .logo {
     margin: 0 auto;
     height: 140px;
-
 
     @include sm {
       height: 240px;
@@ -259,6 +262,13 @@
     margin: 0 auto;
     padding: 0 10px;
 
+    h1 {
+      margin-top: 0;
+      @include sm {
+        margin-top: 20px;
+      }
+    }
+
     @media screen and (min-width: 1024px) {
       flex-direction: row;
       display: flex;
@@ -285,6 +295,7 @@
 
     &-link {
       padding: 10px;
+      font-size: $font-size-s;
     }
 
     @include sm {
@@ -333,6 +344,7 @@
       padding: 10px;
       color: $color-white;
       font-family: $font-rubik;
+      font-size: $font-size-s;
     }
 
     .dropdown-active {
@@ -349,6 +361,7 @@
         }
       }
     }
+
 
     .mobile-navigation-link,
     .link-4{
@@ -373,6 +386,10 @@
        transition-delay: .9s;
       }
     }
+  }
+
+  .icon-burger2 {
+    font-size: $font-size-s;
   }
 
   .dropdown {
